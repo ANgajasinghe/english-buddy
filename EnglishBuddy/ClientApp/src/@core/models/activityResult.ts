@@ -1,0 +1,29 @@
+export interface ActivityResultModel {
+  id: number
+  applicationUserId: string
+  activityId: number
+  studentAnswer: string
+  modelAnswer: string
+  wordCount: number
+  spellingGrammarMistakes: string
+  suggestions: string
+  ratio: number
+  spellingScore: number
+  grammarScore: number
+  objectivityScore: number
+  subjectivityScore: number
+  polarityScore: number
+  similarityScore: number
+  comprehensivenessScore: number
+  essayScore: number
+  speakingRate: number
+  articulationRate: number
+  pronunciationLevel: number
+  mispronouncedWords: string
+  mispronouncedPhonemes: string
+  overallScore: number
+  createdUserId?: any
+  modifiedUserId?: any
+  modifiedDate: Date
+  createdDate: Date
+}
