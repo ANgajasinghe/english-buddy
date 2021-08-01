@@ -32,11 +32,15 @@ export default function AudioAnalyzer(props) {
 
   async function upload(bloburl) {
 
-    let file = await fetch(bloburl).then(r => r.blob()).then(blobFile => new File([blobFile], "record", { type: "audio/wav" }))
-    const data = new FormData()
-    data.append('file', file)
+    // let file = await fetch(bloburl).then(r => r.blob()).then(blobFile => new File([blobFile], "record", { type: "audio/wav" }))
+    // const data = new FormData()
+    // data.append('file', file)
 
-    await axios.post("https://english-buddy-speech.herokuapp.com/uploadAudioFile", data).then(res => {
+    data ={
+      word:"test"
+    }
+
+    await axios.post("https://english-buddy-speech.herokuapp.com/findRhymings", data).then(res => {
       console.log(res.data)
     }).catch(error => {
       console.log(error);
