@@ -1,15 +1,15 @@
-import {ScoreIndicator} from '../../../@ui/components/ScoreIndicator'
+import {CircularIndicator} from '../../../@ui/components/CircularIndicator'
 
 const Results = (props) => {
   return (
     <div className='grid sm:grid-cols-2 md:grid-cols-4 gap-2'>
-      <ScoreIndicator value={props.totalSpeakingLevel}
+      <CircularIndicator value={props.totalSpeakingLevel}
                       label='Total'/>
-      <ScoreIndicator value={props.speakingRate}
+      <CircularIndicator value={props.speakingRate}
                       label='Speaking Rate'/>
-      <ScoreIndicator value={props.articulationRate}
+      <CircularIndicator value={props.articulationRate}
                       label='Articulation Rate'/>
-      <ScoreIndicator value={props.pronounciationLevel}
+      <CircularIndicator value={props.pronounciationLevel}
                       label='Pronounciation Level'/>
     </div>
   )

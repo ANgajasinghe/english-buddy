@@ -6,7 +6,6 @@ import { Add } from "../../../@core/api-base";
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import Button from '@material-ui/core/Button';
-import axios from 'axios';
 
 export default function AudioAnalyzer(props) {
 
@@ -35,29 +34,6 @@ export default function AudioAnalyzer(props) {
     let file = await fetch(bloburl).then(r => r.blob()).then(blobFile => new File([blobFile], "record", { type: "audio/wav" }))
     const data = new FormData()
     data.append('file', file)
-
-    // const data ={
-    //   word:"test"
-    // }
-    // console.log('------------------------------------')
-
-    // try {
-    //     await axios.post("https://english-buddy-speech.herokuapp.com/findRhymings", data).then(res => {
-    //       console.log(res.data)
-    //     }).catch(error => {
-    //       console.log(error);
-    //     })
-    // }  catch (error) {
-    //   console.log(error);
-    // }
- 
-    // try {
-    //    await Add(['https://english-buddy-speech.herokuapp.com', 'findRhymings'], data);
-    // }  catch (error) {
-    //   console.log(error);
-    // }
-
-   
 
     try {
       const response = await Add([Utility.AUDIO_TEXT_TRANSCRIPTION_API_URL, 'uploadAudioFile'], data);
@@ -114,12 +90,6 @@ export default function AudioAnalyzer(props) {
           )
         }
       </div>
-
-      <div>
-        <button onClick={()=>upload("dggdgdgd")}> Click ME </button>  
-      </div>
-
-
     </React.Fragment>
   )
 
