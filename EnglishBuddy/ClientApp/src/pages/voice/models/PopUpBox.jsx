@@ -50,8 +50,10 @@ function SimpleDialog(props) {
 
   const {onClose, selectedValue, open} = props;
   const childToParent = (childdata) => {
+
     setData(childdata[0].result.pronounced_word);
     setPracticeResults(childdata[0])
+
     if ((childdata[0].word === props.word) && (childdata[0].result.correctness[0] === 1)) {
       setResultStatement('Excellent. Well done ' + appUser.firstName)
     }
@@ -97,7 +99,6 @@ function SimpleDialog(props) {
 
   const start = () => {
     // audio.play()
-
     console.log(listPractice)
   }
 
@@ -113,13 +114,17 @@ function SimpleDialog(props) {
     }
   }
 
+  function clear() {
+
+  }
+
 
   return (
     <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open} fullWidth="lg" maxWidth="lg">
       <DialogTitle id="simple-dialog-title">Let's practice words</DialogTitle>
       <div className="grid grid-cols-2 gap-4">
         <div className="shadow-sm m-3">
-          <AudioAnalyzer childToParent={childToParent}/>
+          <AudioAnalyzer childToParent={childToParent} clear={clear}/>
         </div>
 
         <div className="shadow-sm m-3">
@@ -253,8 +258,6 @@ function SimpleDialog(props) {
           </React.Fragment>
         </div>
       </div>
-
-
     </Dialog>
   );
 }
