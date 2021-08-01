@@ -15,6 +15,7 @@ import Dashboard from "./pages/dashboard";
 import Voice from "./pages/voice/index";
 import MyCourseDetails from "./pages/my-courses/my-course-details";
 import "./App.css";
+import Frontpage from "./pages/front-page";
 
 const App = () => {
   const dispatch = useAppDispatch();
@@ -68,6 +69,7 @@ const App = () => {
             <ProtectedRoute path="/dashboard" component={Dashboard}/>
             <Route path="/voice" component={Voice}/>
             <Route path="/my-course-details/:courseId" component={MyCourseDetails}/>
+            <Route path="/front-page" component={Frontpage}/>
             {/*<ProtectedRoute exact path='/home' component={Home}/>*/}
             {/*<ProtectedRoute exact path='/course/:courseId' component={Course}/>*/}
           </Layout>
