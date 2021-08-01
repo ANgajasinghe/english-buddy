@@ -39,20 +39,22 @@ export default function AudioAnalyzer(props) {
     const data ={
       word:"test"
     }
+    console.log('------------------------------------')
 
-    await axios.post("https://english-buddy-speech.herokuapp.com/findRhymings", data).then(res => {
-      console.log(res.data)
-    }).catch(error => {
-      console.log(error);
-    })
-
-
-    // try {
-    //   const response = await Add([Utility.AUDIO_TEXT_TRANSCRIPTION_API_URL, 'uploadAudioFile'], data);
-    //   props.childToParent(response)
-    // } catch (error) {
+    // await axios.post("https://english-buddy-speech.herokuapp.com/findRhymings", data).then(res => {
+    //   console.log(res.data)
+    // }).catch(error => {
     //   console.log(error);
-    // }
+    // })
+
+
+    try {
+      const response = await Add([Utility.AUDIO_TEXT_TRANSCRIPTION_API_URL, 'findRhymings'], data);
+      // props.childToParent(response)
+      console.log(response)
+    } catch (error) {
+      console.log(error);
+    }
   }
 
 
