@@ -1,4 +1,6 @@
 import {useState} from 'react'
+import useWindowSize from 'react-use/lib/useWindowSize'
+import Confetti from 'react-confetti'
 import {Add} from '../../@core/api-base'
 import {Utility} from '../../@core/utility'
 import {useAppDispatch, useAppSelector} from '../../@core/app-store/hooks'
@@ -13,6 +15,11 @@ import SummarizationCorrections from './components/SummarizationCorrections'
 export default function Summarization(props: {
   activity: ActivityModel
 }) {
+  const {
+    width,
+    height
+  } = useWindowSize()
+
   const dispatch = useAppDispatch();
 
   const appUser = useAppSelector((state) => state.auth.applicationUser)
@@ -101,6 +108,12 @@ export default function Summarization(props: {
 
   return (
     <div>
+      {
+        results.overall >= 8 && (
+          <Confetti width={width}
+                    height={height}/>
+        )
+      }
       <div>
         <SummarizationQuestion title={props.activity.title}
                                description={props.activity.description}

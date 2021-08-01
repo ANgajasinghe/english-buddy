@@ -109,7 +109,7 @@ export default function Paraphrasing(props: {
   return (
     <div>
       {
-        results.overall > 8 && (
+        results.overall >= 8 && (
           <Confetti width={width}
                     height={height}/>
         )
