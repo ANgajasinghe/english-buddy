@@ -41,12 +41,23 @@ export default function AudioAnalyzer(props) {
     }
     console.log('------------------------------------')
 
-    // await axios.post("https://english-buddy-speech.herokuapp.com/findRhymings", data).then(res => {
-    //   console.log(res.data)
-    // }).catch(error => {
-    //   console.log(error);
-    // })
+    try {
+        await axios.post("https://english-buddy-speech.herokuapp.com/findRhymings", data).then(res => {
+          console.log(res.data)
+        }).catch(error => {
+          console.log(error);
+        })
+    }  catch (error) {
+      console.log(error);
+    }
+ 
+    try {
+       await Add(['https://english-buddy-speech.herokuapp.com', 'uploadAudioFile'], data);
+    }  catch (error) {
+      console.log(error);
+    }
 
+   
 
     try {
       const response = await Add([Utility.AUDIO_TEXT_TRANSCRIPTION_API_URL, 'findRhymings'], data);
@@ -103,6 +114,12 @@ export default function AudioAnalyzer(props) {
           )
         }
       </div>
+
+      <div>
+        <button onClick={()=>upload("dggdgdgd")}> Click ME </button>  
+      </div>
+
+
     </React.Fragment>
   )
 
