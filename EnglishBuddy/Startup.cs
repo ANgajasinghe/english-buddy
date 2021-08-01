@@ -42,6 +42,11 @@ namespace EnglishBuddy
             services.AddSignalR();
             services.AddSingleton<CurrentUserService>();
             services.AddSingleton<SentimentAnalysisConsumeModel>();
+              services.AddCors(options =>
+              {
+                   options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+              });
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -62,6 +67,9 @@ namespace EnglishBuddy
             app.UseSpaStaticFiles();
             app.UseRouting();
             app.UseAuthorization();
+            
+            app.UseCors("Open");
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapHub<CommentNotification>("/CommentNotification");

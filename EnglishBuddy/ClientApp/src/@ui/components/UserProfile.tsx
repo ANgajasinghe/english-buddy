@@ -1,4 +1,4 @@
-import {Card} from '@material-ui/core';
+import {Avatar, Card} from '@material-ui/core';
 import ProfileImage from './ProfileImage';
 import {NormalText, SecondaryText} from './Text';
 import ProgressBar from './ProgressBar';
@@ -130,9 +130,56 @@ export default function UserProfile() {
           Leaderboard
         </div>
         <div className='mt-3'>
-          Leaderboard
+          <LeaderBoard
+            name="Saman Kumara"
+            imageUrl="https://cdn.lifehack.org/wp-content/uploads/2014/03/shutterstock_97566446.jpg"
+            value={100}
+          />
+
+          <LeaderBoard
+            name="Saman Kumara"
+            imageUrl="https://i.pinimg.com/originals/78/b9/c8/78b9c84e6c2f1a052ccca947546a069a.jpg"
+            value={80}
+          />
+
+
+          <LeaderBoard
+            name="Saman Kumara"
+            imageUrl="https://bmkltsly13vb.compat.objectstorage.ap-mumbai-1.oraclecloud.com/cdn.edu.dailymirror.lk/uploads/articles_14_c6e5bb9dd4.jpg"
+            value={50}
+          />
+
         </div>
       </div>
     </Card>
   );
+}
+
+export function LeaderBoard(prop: {
+  imageUrl: string,
+  name: string,
+  value: number,
+}) {
+  return (
+    <Card className='p-2 m-2 bg-purple-200 flex justify-between'>
+      <div className="flex">
+        <Avatar alt='Profile Image'
+                src={prop.imageUrl}
+                style={{
+                  width: '30px',
+                  height: '30px',
+                  border: '2px',
+                  borderStyle: 'solid',
+                  borderColor: '#fd726d',
+                }}/>
+        <span className="ml-2">
+          {prop.name}
+        </span>
+      </div>
+      <div>
+        <span className="font-bold text-xl text-green-600"> {prop.value} </span>
+      </div>
+
+    </Card>
+  )
 }

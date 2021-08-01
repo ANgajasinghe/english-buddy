@@ -19,7 +19,7 @@ export function DashboardStatsCard(props: {
         </div>
         <div>
           <div className='text-right'>
-            <CountUp className='text-3xl text-right'
+            <CountUp className='text-3xl font-semibold text-right'
                      end={props.value}/>
           </div>
           <div className='text-gray-400 p-0 m-0 text-md'>
@@ -75,7 +75,13 @@ export function MyCourseCard(props: {
                     <p className='text-blue-700 mt-1 font-bold'>
                       #{props.difficulty}
                     </p>
-                    {props.isBestSeller ? <p className='bg-yellow-200 p-1 rounded-2'> Best Seller </p> : null}
+                    {
+                      props.isBestSeller ? (
+                        <p className='bg-yellow-200 px-2 py-1 rounded-2'>
+                          Best Seller
+                        </p>
+                      ) : null
+                    }
                   </div>
                 </div>
               </div>
