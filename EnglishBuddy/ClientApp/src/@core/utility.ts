@@ -14,7 +14,7 @@ export class Utility {
  public static SIMILARITY_API_URL = 'https://semantic-similarity-api.herokuapp.com';
 
  // public static ESSAY_API_URL = 'http://localhost:8001';
-public static ESSAY_API_URL = 'https://essay-evaluation-api.herokuapp.com';
+ public static ESSAY_API_URL = 'https://essay-evaluation-api.herokuapp.com';
 
   public static AUDIO_TEXT_TRANSCRIPTION_API_URL = 'http://localhost:8000';
 
