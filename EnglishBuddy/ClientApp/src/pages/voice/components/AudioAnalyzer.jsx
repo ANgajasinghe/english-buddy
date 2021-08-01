@@ -32,36 +32,36 @@ export default function AudioAnalyzer(props) {
 
   async function upload(bloburl) {
 
-    // let file = await fetch(bloburl).then(r => r.blob()).then(blobFile => new File([blobFile], "record", { type: "audio/wav" }))
-    // const data = new FormData()
-    // data.append('file', file)
+    let file = await fetch(bloburl).then(r => r.blob()).then(blobFile => new File([blobFile], "record", { type: "audio/wav" }))
+    const data = new FormData()
+    data.append('file', file)
 
-    const data ={
-      word:"test"
-    }
-    console.log('------------------------------------')
+    // const data ={
+    //   word:"test"
+    // }
+    // console.log('------------------------------------')
 
-    try {
-        await axios.post("https://english-buddy-speech.herokuapp.com/findRhymings", data).then(res => {
-          console.log(res.data)
-        }).catch(error => {
-          console.log(error);
-        })
-    }  catch (error) {
-      console.log(error);
-    }
+    // try {
+    //     await axios.post("https://english-buddy-speech.herokuapp.com/findRhymings", data).then(res => {
+    //       console.log(res.data)
+    //     }).catch(error => {
+    //       console.log(error);
+    //     })
+    // }  catch (error) {
+    //   console.log(error);
+    // }
  
-    try {
-       await Add(['https://english-buddy-speech.herokuapp.com', 'findRhymings'], data);
-    }  catch (error) {
-      console.log(error);
-    }
+    // try {
+    //    await Add(['https://english-buddy-speech.herokuapp.com', 'findRhymings'], data);
+    // }  catch (error) {
+    //   console.log(error);
+    // }
 
    
 
     try {
-      const response = await Add([Utility.AUDIO_TEXT_TRANSCRIPTION_API_URL, 'findRhymings'], data);
-      // props.childToParent(response)
+      const response = await Add([Utility.AUDIO_TEXT_TRANSCRIPTION_API_URL, 'uploadAudioFile'], data);
+      props.childToParent(response)
       console.log(response)
     } catch (error) {
       console.log(error);
