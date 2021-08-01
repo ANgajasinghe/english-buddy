@@ -1,7 +1,7 @@
 import './style.css'
 import {Button, makeStyles, TextField} from '@material-ui/core';
 import {Link, useHistory, useRouteMatch} from 'react-router-dom';
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import {Add, Get} from '../../@core/api-base';
 import {ApplicationUserModel} from '../../@core/models/applicationUser';
 import {useAppDispatch} from '../../@core/app-store/hooks'
@@ -20,9 +20,13 @@ export default function Login() {
 
 
 
-  Get(["https://english-buddy-speech.herokuapp.com/"]).then((res)=>{
-    console.log(res);
-  })
+  useEffect(()=>{
+    Get(["https://english-buddy-speech.herokuapp.com/"]).then((res)=>{
+      console.log(res);
+    })
+  },[])
+
+  
 
 
   const dispatch = useAppDispatch();
