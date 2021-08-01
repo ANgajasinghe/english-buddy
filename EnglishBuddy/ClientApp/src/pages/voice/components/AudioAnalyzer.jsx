@@ -36,7 +36,7 @@ export default function AudioAnalyzer(props) {
     // const data = new FormData()
     // data.append('file', file)
 
-    data ={
+    const data ={
       word:"test"
     }
 
