@@ -2,7 +2,7 @@ import './style.css'
 import {Button, makeStyles, TextField} from '@material-ui/core';
 import {Link, useHistory, useRouteMatch} from 'react-router-dom';
 import {useState} from 'react'
-import {Add} from '../../@core/api-base';
+import {Add, Get} from '../../@core/api-base';
 import {ApplicationUserModel} from '../../@core/models/applicationUser';
 import {useAppDispatch} from '../../@core/app-store/hooks'
 import {setAuth} from '../authSlice';
@@ -17,6 +17,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Login() {
+
+
+
+  Get(["https://english-buddy-speech.herokuapp.com/"]).then((res)=>{
+    console.log(res);
+  })
+
+
   const dispatch = useAppDispatch();
   const classes = useStyles();
   useRouteMatch();

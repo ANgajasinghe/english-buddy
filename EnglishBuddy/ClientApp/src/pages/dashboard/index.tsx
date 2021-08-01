@@ -13,6 +13,9 @@ export default function Dashboard() {
   const [courses, setCourses] = useState<CourseModel[]>([]);
 
   useEffect(() => {
+
+
+
     if (courses.length <= 0) {
       getMyCourses().then(() => {
       });
