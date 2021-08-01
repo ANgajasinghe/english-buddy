@@ -1,9 +1,9 @@
-import {Card} from '@material-ui/core';
+import { Avatar, Card } from '@material-ui/core';
 import ProfileImage from './ProfileImage';
-import {NormalText, SecondaryText} from './Text';
+import { NormalText, SecondaryText } from './Text';
 import ProgressBar from './ProgressBar';
-import {Line} from 'react-chartjs-2';
-import {useAppSelector} from '../../@core/app-store/hooks';
+import { Line } from 'react-chartjs-2';
+import { useAppSelector } from '../../@core/app-store/hooks';
 
 // const useStyles = makeStyles((theme) => ({
 //   root: {
@@ -44,16 +44,16 @@ export default function UserProfile() {
 
   return (
     <Card className='me-2 link-behavior p-3'
-          style={{
-            height: '100%',
-            borderRadius: '10px',
-          }}>
+      style={{
+        height: '100%',
+        borderRadius: '10px',
+      }}>
       <div className='text-end'>
         <i className='fa fa-pencil-square-o text-green-600'
-           aria-hidden='true'/>
+          aria-hidden='true' />
       </div>
       <div className='text-center'>
-        <ProfileImage/>
+        <ProfileImage />
         <NormalText>
           <div className='mt-2'>
             <b>{appUser.firstName} {appUser.lastName}</b>
@@ -104,35 +104,82 @@ export default function UserProfile() {
             </div>
           </div>
         </div>
-        <hr className='mt-4'/>
+        <hr className='mt-4' />
         <div className='text-md font-bold text-gray-500 text-left mt-3'>
           Statistics
         </div>
         <div className='mt-3'>
           <Line type={'line'}
-                data={data}
-                options={options}/>
+            data={data}
+            options={options} />
         </div>
-        <hr className='mt-4'/>
+        <hr className='mt-4' />
         <div className='text-md font-bold text-gray-500 text-left mt-3'>
           Skills
         </div>
         <div className='mt-3'>
           <ProgressBar name={'Grammar'}
-                       value={appUser.grammar + 1}/>
+            value={appUser.grammar + 1} />
           <ProgressBar name={'Speaking'}
-                       value={appUser.speaking + 1}/>
+            value={appUser.speaking + 1} />
           <ProgressBar name={'Writing'}
-                       value={appUser.writing + 1}/>
+            value={appUser.writing + 1} />
         </div>
-        <hr className='mt-4'/>
+        <hr className='mt-4' />
         <div className='text-md font-bold text-gray-500 text-left mt-3'>
           Leaderboard
         </div>
         <div className='mt-3'>
-          Leaderboard
+          <LeaderBoard
+            name="Saman Kumara"
+            imageUrl="https://cdn.lifehack.org/wp-content/uploads/2014/03/shutterstock_97566446.jpg"
+            value={100}
+          />
+
+          <LeaderBoard
+            name="Saman Kumara"
+            imageUrl="https://i.pinimg.com/originals/78/b9/c8/78b9c84e6c2f1a052ccca947546a069a.jpg"
+            value={80}
+          />
+
+
+          <LeaderBoard
+            name="Saman Kumara"
+            imageUrl="https://bmkltsly13vb.compat.objectstorage.ap-mumbai-1.oraclecloud.com/cdn.edu.dailymirror.lk/uploads/articles_14_c6e5bb9dd4.jpg"
+            value={50}
+          />
+
         </div>
       </div>
     </Card>
   );
+}
+
+export function LeaderBoard(prop: {
+  imageUrl: string,
+  name: string,
+  value: number,
+}) {
+  return (
+    <Card className='p-2 m-2 bg-purple-200 flex justify-between'>
+      <div className="flex">
+        <Avatar alt='Profile Image'
+          src={prop.imageUrl}
+          style={{
+            width: '30px',
+            height: '30px',
+            border: '2px',
+            borderStyle: 'solid',
+            borderColor: '#fd726d',
+          }} />
+        <span className="ml-2">
+          {prop.name}
+        </span>
+      </div>
+      <div>
+        <span className="font-bold text-xl text-green-600" > {prop.value} </span>
+      </div>
+
+    </Card>
+  )
 }

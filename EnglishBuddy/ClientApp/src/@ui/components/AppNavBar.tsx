@@ -81,7 +81,7 @@ export default function AppNavBar() {
                style={{
                  color: '#ffffff'
                }}>
-            Navbar
+            English Buddy
           </div>
           <div className='d-flex align-items-center'>
             <Avatar alt='User Profile'
