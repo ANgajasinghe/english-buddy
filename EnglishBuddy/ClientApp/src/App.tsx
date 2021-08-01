@@ -12,7 +12,6 @@ import {setAuth} from "./+auth/authSlice";
 import Login from "./+auth/login";
 import SignUp from "./+auth/sign-up";
 import Dashboard from "./pages/dashboard";
-import Voice from "./pages/voice/index";
 import MyCourseDetails from "./pages/my-courses/my-course-details";
 import "./App.css";
 
@@ -66,7 +65,6 @@ const App = () => {
           <Route path="/sign-up" component={SignUp}/>
           <Layout>
             <ProtectedRoute path="/dashboard" component={Dashboard}/>
-            <Route path="/voice" component={Voice}/>
             <Route path="/my-course-details/:courseId" component={MyCourseDetails}/>
             {/*<ProtectedRoute exact path='/home' component={Home}/>*/}
             {/*<ProtectedRoute exact path='/course/:courseId' component={Course}/>*/}

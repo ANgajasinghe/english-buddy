@@ -27,7 +27,7 @@ axios.interceptors.request.use(
 
 ReactDOM.render(
   <Provider store={store}>
-    <AnimatedCursor />
+    <AnimatedCursor/>
     <App/>
   </Provider>,
   document.getElementById('root')

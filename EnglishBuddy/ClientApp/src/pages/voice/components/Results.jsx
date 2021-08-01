@@ -4,13 +4,13 @@ const Results = (props) => {
   return (
     <div className='grid sm:grid-cols-2 md:grid-cols-4 gap-2'>
       <CircularIndicator value={props.totalSpeakingLevel}
-                      label='Total'/>
+                         label='Total'/>
       <CircularIndicator value={props.speakingRate}
-                      label='Speaking Rate'/>
+                         label='Speaking Rate'/>
       <CircularIndicator value={props.articulationRate}
-                      label='Articulation Rate'/>
+                         label='Articulation Rate'/>
       <CircularIndicator value={props.pronounciationLevel}
-                      label='Pronounciation Level'/>
+                         label='Pronounciation Level'/>
     </div>
   )
 }

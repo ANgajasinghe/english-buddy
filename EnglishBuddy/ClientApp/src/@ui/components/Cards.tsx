@@ -75,7 +75,13 @@ export function MyCourseCard(props: {
                     <p className='text-blue-700 mt-1 font-bold'>
                       #{props.difficulty}
                     </p>
-                    {props.isBestSeller ? <p className='bg-yellow-200 p-1 rounded-2'> Best Seller </p> : null}
+                    {
+                      props.isBestSeller ? (
+                        <p className='bg-yellow-200 px-2 py-1 rounded-2'>
+                          Best Seller
+                        </p>
+                      ) : null
+                    }
                   </div>
                 </div>
               </div>

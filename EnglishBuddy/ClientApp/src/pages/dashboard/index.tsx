@@ -1,12 +1,10 @@
-import Slider from "react-slick";
 import UserProfile from "../../@ui/components/UserProfile";
-import { DashboardStatsCard, MyCourseCard } from "../../@ui/components/Cards";
-import { useAppSelector } from "../../@core/app-store/hooks";
-import { useEffect, useState } from "react";
-import { CourseModel } from "../../@core/models/course";
-import { Get } from "../../@core/api-base";
-import { Link } from "react-router-dom";
-import { Button } from "@material-ui/core";
+import {DashboardStatsCard, MyCourseCard} from "../../@ui/components/Cards";
+import {useAppSelector} from "../../@core/app-store/hooks";
+import {useEffect, useState} from "react";
+import {CourseModel} from "../../@core/models/course";
+import {Get} from "../../@core/api-base";
+import {Link} from "react-router-dom";
 
 export default function Dashboard() {
   const appUser = useAppSelector((state) => state.auth.applicationUser);
@@ -14,7 +12,6 @@ export default function Dashboard() {
   const [courses, setCourses] = useState<CourseModel[]>([]);
 
   useEffect(() => {
-
 
 
     if (courses.length <= 0) {
@@ -46,15 +43,9 @@ export default function Dashboard() {
       <Notifications></Notifications>
 
 
-
-
-
-
-
-
       <div className="row mb-6 mt-0.5 g-5">
         <div className="col-sm-3">
-          <UserProfile />
+          <UserProfile/>
         </div>
         <div className="col-sm-9">
           <h5 className="text-2xl">
@@ -92,7 +83,7 @@ export default function Dashboard() {
           </div>
           <div className="text-xl mt-5 flex justify-between">
             <div className="font-poppins">My Courses</div>
-            <div className=" text-purple-700 font-semibold text-sm cursor-pointer">  View More  </div>
+            <div className=" text-purple-700 font-semibold text-sm cursor-pointer"> View More</div>
 
           </div>
           <div className="row mt-4">
@@ -111,14 +102,14 @@ export default function Dashboard() {
                   />
                 </Link>
               ))}
-              </div>
+            </div>
             {/* </Slider> */}
           </div>
           <h5 className="text-xl mt-5">
 
             <div className="text-xl mt-5 flex justify-between">
               <div className="font-poppins">Recommended for You</div>
-              <div className=" text-purple-700 font-semibold text-sm cursor-pointer">  View More  </div>
+              <div className=" text-purple-700 font-semibold text-sm cursor-pointer"> View More</div>
             </div>
             <div className="grid lg:grid-cols-2 mt-4 gap-2">
               <MyCourseCard
@@ -168,7 +159,7 @@ export function Notifications() {
 
   return (
 
-    <div className="static" >
+    <div className="static">
       <div className="absolute flex right-0">
         <button
           className="border-r-0 
@@ -193,8 +184,8 @@ export function Notifications() {
         </button>
 
         <div className="flex absolute left-0 h-4 w-4">
-          <span className="animate-ping  absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75" />
-          <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500" />
+          <span className="animate-ping  absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"/>
+          <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"/>
         </div>
         {/* <span className="flex h-3 w-3">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
