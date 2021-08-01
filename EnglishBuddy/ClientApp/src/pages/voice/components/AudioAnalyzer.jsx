@@ -52,7 +52,7 @@ export default function AudioAnalyzer(props) {
     }
  
     try {
-       await Add(['https://english-buddy-speech.herokuapp.com', 'uploadAudioFile'], data);
+       await Add(['https://english-buddy-speech.herokuapp.com', 'findRhymings'], data);
     }  catch (error) {
       console.log(error);
     }
