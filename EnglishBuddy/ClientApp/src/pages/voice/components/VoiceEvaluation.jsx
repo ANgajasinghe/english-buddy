@@ -6,7 +6,6 @@ import {Utility} from '../../../@core/utility';
 import {Get} from "../../../@core/api-base";
 import Assistant from './Assistant';
 import Results from './Results';
-import { ActivityResultModel } from '../../../@core/models/activityResult';
 import {useAppDispatch, useAppSelector} from '../../../@core/app-store/hooks';
 import {setEvaluated} from '../../my-courses/my-course-details/evaluationSlice';
 
@@ -68,7 +67,7 @@ export default function VoiceEvaluation(props) {
 
         let pronounciationLevelTemp = Math.round((correctWordCount * 10) / (correctWordCount + incorrectWordCount))
         let totalSpeakingTemp = Math.round((pronounciationLevelTemp + articualtionRateTemp + speakingRateTemp) / 3)
-     
+
 
         setPronounciationLevel(pronounciationLevelTemp)
         setTotalSpeakingLevel(totalSpeakingTemp)

@@ -33,7 +33,9 @@ export default function AudioAnalyzer({childToParent}) {
     setStatus(null)
   }
   const onStop = (audioData) => {
-    setTimeout(function(){ setStopAudio(audioData); }, 3000);
+    setTimeout(function () {
+      setStopAudio(audioData);
+    }, 3000);
   }
 
   async function upload(bloburl) {
