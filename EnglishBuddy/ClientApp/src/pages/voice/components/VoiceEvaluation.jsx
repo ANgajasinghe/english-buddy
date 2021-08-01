@@ -94,7 +94,7 @@ export default function VoiceEvaluation(props) {
       <div className="shadow-sm col-start-2 col-span-6">
 
         <div className="grid grid-cols-2 gap-4">
-          <div className="shadow-sm m-3">
+          <div className="m-3">
             <br/>
             <AudioAnalyzer childToParent={childToParent} clear={clear}/>
           </div>
@@ -102,7 +102,7 @@ export default function VoiceEvaluation(props) {
             <br/>
             {!textTranscription && (
               <div>
-                <Assistant description={props.activity.description}/>
+                <Assistant description={props.activity.description} modelAnswer={props.activity.modelAnswer}/>
               </div>
             )}
             {

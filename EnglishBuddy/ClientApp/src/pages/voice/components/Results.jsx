@@ -2,7 +2,7 @@ import {CircularIndicator} from '../../../@ui/components/CircularIndicator'
 
 const Results = (props) => {
   return (
-    <div className='grid sm:grid-cols-2 md:grid-cols-4 gap-2'>
+    <div className='grid sm:grid-cols-2 md:grid-cols-4 gap-4 px-4'>
       <CircularIndicator value={props.totalSpeakingLevel}
                          label='Total'/>
       <CircularIndicator value={props.speakingRate}
@@ -10,7 +10,7 @@ const Results = (props) => {
       <CircularIndicator value={props.articulationRate}
                          label='Articulation Rate'/>
       <CircularIndicator value={props.pronounciationLevel}
-                         label='Pronounciation Level'/>
+                         label='Pronounciation'/>
     </div>
   )
 }

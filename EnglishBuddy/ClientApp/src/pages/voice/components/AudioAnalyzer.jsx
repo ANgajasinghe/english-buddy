@@ -26,7 +26,7 @@ export default function AudioAnalyzer(props) {
   const onStop = (audioData) => {
     setTimeout(function () {
       setStopAudio(audioData);
-    }, 100);
+    }, 3000);
   }
 
   async function upload(bloburl) {
@@ -82,10 +82,10 @@ export default function AudioAnalyzer(props) {
                 src={stopAudio.url}
                 onPlay={() => console.log("onPlay")}
               />
-              <br/>
+              <div className="mt-5 mb-3">
               <Button variant="contained" size="large" color="primary"
                       onClick={() => upload(stopAudio.url)}>EVALUATE</Button>
-              <br/>
+              </div>
             </React.Fragment>
           )
         }
