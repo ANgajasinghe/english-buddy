@@ -50,8 +50,10 @@ function SimpleDialog(props) {
 
   const {onClose, selectedValue, open} = props;
   const childToParent = (childdata) => {
+
     setData(childdata[0].result.pronounced_word);
     setPracticeResults(childdata[0])
+
     if ((childdata[0].word === props.word) && (childdata[0].result.correctness[0] === 1)) {
       setResultStatement('Excellent. Well done ' + appUser.firstName)
     }
@@ -97,7 +99,6 @@ function SimpleDialog(props) {
 
   const start = () => {
     // audio.play()
-
     console.log(listPractice)
   }
 
@@ -113,13 +114,17 @@ function SimpleDialog(props) {
     }
   }
 
+  function clear() {
+
+  }
+
 
   return (
     <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open} fullWidth="lg" maxWidth="lg">
       <DialogTitle id="simple-dialog-title">Let's practice words</DialogTitle>
       <div className="grid grid-cols-2 gap-4">
         <div className="shadow-sm m-3">
-          <AudioAnalyzer childToParent={childToParent}/>
+          <AudioAnalyzer childToParent={childToParent} clear={clear}/>
         </div>
 
         <div className="shadow-sm m-3">
@@ -131,7 +136,7 @@ function SimpleDialog(props) {
                   <Divider variant="left" style={{border: '1px solid'}}/>
                 </Typography>
                 <Typography className={classes.title} color="textSecondary" gutterBottom>
-                  i.p.a transcript
+                  I.P.A. transcript
                 </Typography>
                 <Typography variant="h5" component="h2">
                   <div className="flex flex-wrap gap-2  mx-4">
@@ -167,7 +172,7 @@ function SimpleDialog(props) {
                   </div>
                 </Typography>
                 <Typography className={classes.pos} color="textSecondary">
-                  rhyming words
+                  Rhyming words
                 </Typography>
                 <Typography variant="body2" component="p">
                   <div className="text-green-500 m-0.5 cursor-pointer" onClick={() => {
@@ -187,8 +192,8 @@ function SimpleDialog(props) {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="large" color="primary" onClick={() => getNativeSpeech(props.word)}>NATIVE SPEAK</Button>
-                <Button size="large" color="primary" onClick={() => start()}>YOUR SPEAK</Button>
+                <Button size="large" color="primary" onClick={() => getNativeSpeech(props.word)}>NATIVE SPEAKER</Button>
+                <Button size="large" color="primary" onClick={() => start()}>YOU</Button>
               </CardActions>
             </Card>
             <br/>
@@ -199,13 +204,13 @@ function SimpleDialog(props) {
                   <Divider variant="left" style={{border: '1px solid'}}/>
                 </Typography>
                 <Typography className={classes.title} color="textSecondary" gutterBottom>
-                  you said
+                  You said
                 </Typography>
                 <Typography variant="body2" component="p">
                   {practiceResults.word}
                 </Typography>
                 <Typography className={classes.title} color="textSecondary" gutterBottom>
-                  i.p.a transcript
+                  I.P.A. transcript
                 </Typography>
                 <Typography variant="h5" component="h2">
                   <div className="flex flex-wrap gap-2  mx-4">
@@ -241,7 +246,7 @@ function SimpleDialog(props) {
                   </div>
                 </Typography>
                 <Typography className={classes.title} color="textSecondary" gutterBottom>
-                  result
+                  Result
                 </Typography>
                 <Typography variant="h6" component="h6">
                   <div className="flex flex-wrap gap-2  mx-4 text-green-500 m-0.3">
@@ -253,8 +258,6 @@ function SimpleDialog(props) {
           </React.Fragment>
         </div>
       </div>
-
-
     </Dialog>
   );
 }

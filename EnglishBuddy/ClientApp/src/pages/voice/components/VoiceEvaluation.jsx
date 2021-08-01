@@ -6,7 +6,6 @@ import {Utility} from '../../../@core/utility';
 import {Get} from "../../../@core/api-base";
 import Assistant from './Assistant';
 import Results from './Results';
-import { ActivityResultModel } from '../../../@core/models/activityResult';
 import {useAppDispatch, useAppSelector} from '../../../@core/app-store/hooks';
 import {setEvaluated} from '../../my-courses/my-course-details/evaluationSlice';
 
@@ -14,7 +13,6 @@ export default function VoiceEvaluation(props) {
 
   const dispatch = useAppDispatch()
   const appUser = useAppSelector((state) => state.auth.applicationUser)
-
   const [textTranscription, setTextTranscription] = useState('')
   const [audioURL] = useState('')
   const [speakingRate, setSpeakingRate] = useState(0)
@@ -31,16 +29,14 @@ export default function VoiceEvaluation(props) {
   }
 
   function clear() {
-    setTextTranscription(null)
-    setTextTranscription(null)
-    setTotalSpeakingLevel(null)
-    setPronounciationLevel(null)
-    setArticulationRate(null)
+    setTextTranscription('')
+    setTotalSpeakingLevel(0)
+    setPronounciationLevel(0)
+    setArticulationRate(0)
+    setSpeakingRate(0)
   }
 
   async function getSpeechRate() {
-
-
     try {
       const response = await Get([Utility.AUDIO_TEXT_TRANSCRIPTION_API_URL, 'getSpeechRate']);
       console.log(response)
@@ -49,7 +45,6 @@ export default function VoiceEvaluation(props) {
 
       setSpeakingRate(speakingRateTemp)
       setArticulationRate(articualtionRateTemp)
-
 
       let wordArray = []
       let phonemeArray = []
@@ -68,7 +63,6 @@ export default function VoiceEvaluation(props) {
 
         let pronounciationLevelTemp = Math.round((correctWordCount * 10) / (correctWordCount + incorrectWordCount))
         let totalSpeakingTemp = Math.round((pronounciationLevelTemp + articualtionRateTemp + speakingRateTemp) / 3)
-     
 
         setPronounciationLevel(pronounciationLevelTemp)
         setTotalSpeakingLevel(totalSpeakingTemp)
@@ -93,7 +87,6 @@ export default function VoiceEvaluation(props) {
     } catch (error) {
       console.log(error);
     }
-
   }
 
   return (
@@ -103,7 +96,7 @@ export default function VoiceEvaluation(props) {
         <div className="grid grid-cols-2 gap-4">
           <div className="shadow-sm m-3">
             <br/>
-            <AudioAnalyzer childToParent={childToParent}/>
+            <AudioAnalyzer childToParent={childToParent} clear={clear}/>
           </div>
           <div className="shadow-sm m-3">
             <br/>
@@ -115,9 +108,6 @@ export default function VoiceEvaluation(props) {
             {
               textTranscription && (
                 <React.Fragment>
-                  <Button variant="contained" size="large" color="secondary" onClick={() => clear()}>CLEAR</Button>
-                  <br/>
-                  <br/>
                   <div className="flex flex-wrap gap-2  mx-4">
                     {textTranscription.map(textData => {
                       if (textData.result.correctness[0] === 1) {

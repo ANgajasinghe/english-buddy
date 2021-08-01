@@ -1,4 +1,6 @@
 import {useState} from 'react'
+import useWindowSize from 'react-use/lib/useWindowSize'
+import Confetti from 'react-confetti'
 import {EssaySuggestions} from '../../util/suggestions'
 import {Add} from '../../@core/api-base'
 import {Utility} from '../../@core/utility'
@@ -14,6 +16,11 @@ import EssayCorrections from './components/EssayCorrections'
 export default function Essay(props: {
   activity: ActivityModel
 }) {
+  const {
+    width,
+    height
+  } = useWindowSize()
+
   const dispatch = useAppDispatch();
 
   const appUser = useAppSelector((state) => state.auth.applicationUser)
@@ -83,6 +90,12 @@ export default function Essay(props: {
 
   return (
     <div>
+      {
+        results.score >= 8 && (
+          <Confetti width={width}
+                    height={height}/>
+        )
+      }
       <div>
         <EssayQuestion title={props.activity.title}
                        wordLimit={props.activity.wordLimit}
