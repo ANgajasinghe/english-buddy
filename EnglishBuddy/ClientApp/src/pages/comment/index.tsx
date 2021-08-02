@@ -53,7 +53,7 @@ export default function Comment() {
 
   return (
     <div className='mt-4'>
-      <h3>Prove us your feedback on the activity</h3>
+      <h3 className="text-md font-semibold">Hey, Do not forget to add your feedback :)</h3>
       <div className='row mt-4 mb-4'>
         <Box component='fieldset' mb={3} borderColor='transparent'>
           <Rating name='customized-icons'
@@ -67,7 +67,7 @@ export default function Comment() {
                           aria-label='minimum height'
                           rowsMin={5}
                           onChange={(e) => commentHandler(e.target.value)}
-                          placeholder='Please type your answer here'/>
+                          placeholder='Add your comment'/>
       </div>
     </div>
   );
