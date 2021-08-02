@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         poppins:['Poppins'],
         Josefin:['Josefin Sans'],
+        Nunito:['Nunito Sans']
       }
     },
   },

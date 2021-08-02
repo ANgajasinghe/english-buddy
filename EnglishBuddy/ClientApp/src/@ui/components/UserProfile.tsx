@@ -48,34 +48,34 @@ export default function UserProfile() {
 
           <div className='m-2 mt-4'>
             <div className='flex justify-between mb-2'>
-              <div className='text-sm font-semibold'>
+              <div className='text-sm font-semibold font-Josefin'>
                 From:
               </div>
-              <div className='text-sm'>
+              <div className='text-sm font-Josefin'>
                 {appUser.city}, {appUser.resident}
               </div>
             </div>
             <div className='flex justify-between mb-2'>
-              <div className='text-sm font-semibold'>
+              <div className='text-sm font-semibold font-Josefin'>
                 Age:
               </div>
-              <div className='text-sm'>
+              <div className='text-sm font-Josefin'>
                 {appUser.age}
               </div>
             </div>
             <div className='flex justify-between mb-2'>
-              <div className='text-sm font-semibold'>
+              <div className='text-sm font-semibold font-Josefin'>
                 Gender:
               </div>
-              <div className='text-sm'>
+              <div className='text-sm font-Josefin'>
                 {appUser.gender}
               </div>
             </div>
             <div className='flex justify-between mb-2'>
-              <div className='text-sm font-semibold'>
+              <div className='text-sm font-semibold font-Josefin'>
                 Language:
               </div>
-              <div className='text-sm'>
+              <div className='text-sm font-Josefin'>
                 {appUser.language}
               </div>
             </div>

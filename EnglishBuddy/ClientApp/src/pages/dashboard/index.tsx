@@ -77,7 +77,7 @@ export default function Dashboard() {
               borderRadius: '10px',
               backgroundColor: '#FEE2E2'
             }}>
-            <p className="f-secondary font-bold text-2xl">
+            <p className="f-secondary font-Nunito font-bold text-2xl">
               Hello {appUser.firstName}, Welcome Back!
             </p>
             <div className="w-75 mt-10 text-lg pr-5 text-gray-600">
@@ -123,7 +123,7 @@ export default function Dashboard() {
           </div>
 
           <div className="mt-5 flex justify-between">
-
+          
             <div className="font-poppins text-lg m-1 font-semibold">
               Your Courses
             </div>
@@ -136,17 +136,13 @@ export default function Dashboard() {
             cursor-pointer">
               View More
             </div>
-
-
           </div>
-
-
 
           <div className="row">
             {/* <Slider {...settings}> */}
             <div className="grid lg:grid-cols-2 mt-4 gap-2">
               {
-                courses.slice(0, 6).map((course) => (
+                courses.slice(0, 4).map((course) => (
                   <Link to={`my-course-details/${course.id}`}>
                     <MyCourseCard key={course.id}
                       title={course.title}
@@ -162,7 +158,8 @@ export default function Dashboard() {
             </div>
             {/* </Slider> */}
           </div>
-          <h5 className="text-xl mt-5">
+
+          {/* <h5 className="text-xl mt-5">
             <div className="text-xl mt-5 flex justify-between">
               <div className="font-poppins text-xl m-1">Recommended Courses</div>
               <div className="mt-3 mr-4 text-purple-700 font-semibold text-sm cursor-pointer">View More</div>
@@ -209,7 +206,7 @@ export default function Dashboard() {
                 difficulty={"Advanced"}
                 isBestSeller={true} />
             </div>
-          </h5>
+          </h5> */}
         </div>
         <div className="col-sm-3">
           <UserProfile />
