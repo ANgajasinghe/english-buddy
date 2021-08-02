@@ -10,6 +10,10 @@ export default function UserProfile() {
   return (
     <div>
       <div className="bg-white p-3 rounded-lg">
+        <div className='text-end'>
+          <i className='fas fa-sign-out-alt text-red-800'
+             aria-hidden='true'/>
+        </div>
         <div className='text-center'>
           <ProfileImage/>
           <div className='mt-3 font-semibold font-Josefin'>
