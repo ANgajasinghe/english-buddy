@@ -104,7 +104,7 @@ export default function UserProfile() {
             </div>
           </div>
         </div>
-        <hr className='mt-4'/>
+        {/* <hr className='mt-4'/>
         <div className='text-md font-bold text-gray-500 text-left mt-3'>
           Statistics
         </div>
@@ -124,7 +124,8 @@ export default function UserProfile() {
                        value={appUser.speaking + 1}/>
           <ProgressBar name={'Writing'}
                        value={appUser.writing + 1}/>
-        </div>
+        </div> */}
+        
         <hr className='mt-4'/>
         <div className='text-md font-bold text-gray-500 text-left mt-3'>
           Leaderboard
