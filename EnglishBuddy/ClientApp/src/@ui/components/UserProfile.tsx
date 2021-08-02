@@ -123,31 +123,41 @@ export default function UserProfile() {
           <ProgressBar name={'Writing'}
                        value={appUser.writing + 1}/>
         </div> */}
-
         <hr className='mt-4'/>
         <div className='text-md font-bold text-gray-500 text-left mt-3'>
           Leaderboard
         </div>
         <div className='mt-3'>
-          <LeaderBoard
-            name="Saman Kumara"
-            imageUrl="https://cdn.lifehack.org/wp-content/uploads/2014/03/shutterstock_97566446.jpg"
-            value={100}
-          />
-
-          <LeaderBoard
-            name="Saman Kumara"
-            imageUrl="https://i.pinimg.com/originals/78/b9/c8/78b9c84e6c2f1a052ccca947546a069a.jpg"
-            value={80}
-          />
-
-
-          <LeaderBoard
-            name="Saman Kumara"
-            imageUrl="https://bmkltsly13vb.compat.objectstorage.ap-mumbai-1.oraclecloud.com/cdn.edu.dailymirror.lk/uploads/articles_14_c6e5bb9dd4.jpg"
-            value={50}
-          />
-
+          <LeaderBoard name="Saman Kumara"
+                       imageUrl="https://cdn.lifehack.org/wp-content/uploads/2014/03/shutterstock_97566446.jpg"
+                       value={962}/>
+          <LeaderBoard name="Akalanka Gajasinghe"
+                       imageUrl="https://i.pinimg.com/originals/78/b9/c8/78b9c84e6c2f1a052ccca947546a069a.jpg"
+                       value={875}/>
+          <LeaderBoard name="Nehan Ilangakoon"
+                       imageUrl="https://bmkltsly13vb.compat.objectstorage.ap-mumbai-1.oraclecloud.com/cdn.edu.dailymirror.lk/uploads/articles_14_c6e5bb9dd4.jpg"
+                       value={744}/>
+          <LeaderBoard name="Ravindu Jeewantha"
+                       imageUrl="https://cdn.lifehack.org/wp-content/uploads/2014/03/shutterstock_97566446.jpg"
+                       value={740}/>
+          <LeaderBoard name="Tharinda Rajapaksha"
+                       imageUrl="https://i.pinimg.com/originals/78/b9/c8/78b9c84e6c2f1a052ccca947546a069a.jpg"
+                       value={735}/>
+          <LeaderBoard name="Nuvindu Nirmana"
+                       imageUrl="https://bmkltsly13vb.compat.objectstorage.ap-mumbai-1.oraclecloud.com/cdn.edu.dailymirror.lk/uploads/articles_14_c6e5bb9dd4.jpg"
+                       value={620}/>
+          <LeaderBoard name="Chathupa Karunarathna"
+                       imageUrl="https://cdn.lifehack.org/wp-content/uploads/2014/03/shutterstock_97566446.jpg"
+                       value={555}/>
+          <LeaderBoard name="Thisura Pamuditha"
+                       imageUrl="https://i.pinimg.com/originals/78/b9/c8/78b9c84e6c2f1a052ccca947546a069a.jpg"
+                       value={412}/>
+          <LeaderBoard name="Pasan Madusara"
+                       imageUrl="https://bmkltsly13vb.compat.objectstorage.ap-mumbai-1.oraclecloud.com/cdn.edu.dailymirror.lk/uploads/articles_14_c6e5bb9dd4.jpg"
+                       value={410}/>
+          <LeaderBoard name="Jithru Jayawantha"
+                       imageUrl="https://cdn.lifehack.org/wp-content/uploads/2014/03/shutterstock_97566446.jpg"
+                       value={399}/>
         </div>
       </div>
     </Card>

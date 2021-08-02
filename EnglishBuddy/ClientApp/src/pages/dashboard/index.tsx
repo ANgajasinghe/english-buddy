@@ -1,5 +1,5 @@
 import UserProfile from "../../@ui/components/UserProfile";
-import {DashboardStatsCard, MyCourseCard} from "../../@ui/components/Cards";
+import {MyCourseCard} from "../../@ui/components/Cards";
 import {useAppSelector} from "../../@core/app-store/hooks";
 import {useEffect, useState} from "react";
 import {CourseModel} from "../../@core/models/course";
@@ -67,7 +67,6 @@ export default function Dashboard() {
     },
   };
 
-
   return (
     <div>
       <Notifications/>
@@ -76,39 +75,44 @@ export default function Dashboard() {
           <UserProfile/>
         </div>
         <div className="col-sm-9">
-          <div className="flex justify-between content-center">
-            <p><b className="text-lg font-poppins font-semibold">Dashboard</b></p>
-            {/* <div className="flex">
-              <div className="py-1 px-4 rounded-sm w-56 text-gray-300 bg-gray-100"> Search Something </div>
-              <i className=" text-xl py-1 px-3 rounded-lg bg-purple-200 text-purple-900 lab la-searchengin"></i>
-            </div> */}
-          </div>
-
+          <p className="text-3xl font-poppins font-semibold m-1">
+            Dashboard
+          </p>
+          {/*<div className="flex">*/}
+          {/*  <div className="py-1 px-4 rounded-sm w-56 text-gray-300 bg-gray-100">Search Something</div>*/}
+          {/*  <i className=" text-xl py-1 px-3 rounded-lg bg-purple-200 text-purple-900 lab la-searchengin"/>*/}
+          {/*</div>*/}
           <div className="relative">
             <div className="absolute right-10 top-0">
               <img width="250" src="./assets/undraw_social_friends_nsbv.svg" alt="hello"/>
             </div>
           </div>
-
-          <Card className=" bg-red-100 mt-12 h-48 rounded-xl p-4 " style={{
-            borderRadius: '10px',
-            backgroundColor: '#FEE2E2'
-          }}>
-            <p className=" f-secondary font-bold text-lg "> Hello Tharinda, Welcome Back </p>
-            <p className="w-75 mt-10">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean <br/> commodo ligula
-              eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis <br/> dis parturient montes, </p>
+          <Card className="bg-red-100 mt-12 h-48 rounded-xl p-4 "
+                style={{
+                  borderRadius: '10px',
+                  backgroundColor: '#FEE2E2'
+                }}>
+            <p className="f-secondary font-bold text-2xl">
+              Hello {appUser.firstName}, Welcome Back!
+            </p>
+            <p className="w-75 mt-10 text-xl pr-5 font-semibold text-red-600">
+              Join with the next revolution in English learning!
+            </p>
+            <p className="w-75 mt-3 mb-5 text-lg pr-5 font-semibold">
+              Enroll to the newest courses by our best authors and make a difference...
+            </p>
           </Card>
-
-
+          <div className="text-xl mt-5 flex justify-between">
+            <div className="font-poppins text-xl m-1">Statistics</div>
+            <div className="mt-3 mr-4 text-purple-700 font-semibold text-sm cursor-pointer">View More</div>
+          </div>
           <div className='grid sm:grid-cols-2 gap-4 mt-4'>
             <Card className="p-4 rounded-2xl "
                   style={{
                     borderRadius: '10px',
-
                   }}>
               <div className='text-md font-bold text-gray-500 text-left mb-3'>
-                Statistics
+                Progress Report
               </div>
               <div className='mt-3'>
                 <Line type={'line'}
@@ -118,8 +122,7 @@ export default function Dashboard() {
             </Card>
             <Card className="p-4 rounded-2xl "
                   style={{
-                    borderRadius: '10px',
-
+                    borderRadius: '10px'
                   }}>
               <div className='text-md font-bold text-gray-500 text-left mb-3'>
                 Skills
@@ -130,37 +133,32 @@ export default function Dashboard() {
                            value={appUser.speaking + 1}/>
               <ProgressBar name={'Writing'}
                            value={appUser.writing + 1}/>
-
               <ProgressBar name={'Reading'}
                            value={appUser.writing + 1}/>
             </Card>
-
-
           </div>
-
-
-          <div className="grid lg:grid-cols-4 mt-4 gap-5">
-            <DashboardStatsCard backgroundColor="bg-purple"
-                                fontColorClass="text-purple"
-                                font="fa-star"
-                                value={appUser.points}
-                                subtitle="Total Points"/>
-            <DashboardStatsCard backgroundColor="bg-green"
-                                fontColorClass="text-green"
-                                font="fa-crown"
-                                value={appUser.rank}
-                                subtitle="My Rank"/>
-            <DashboardStatsCard backgroundColor="bg-red"
-                                fontColorClass="text-red"
-                                font="fa-book"
-                                value={appUser.courseCount}
-                                subtitle="My Courses"/>
-            <DashboardStatsCard backgroundColor="bg-yellow"
-                                fontColorClass="text-yellow"
-                                font="fa-coins"
-                                value={appUser.coins}
-                                subtitle="My Coins"/>
-          </div>
+          {/*<div className="grid lg:grid-cols-4 mt-4 gap-5">*/}
+          {/*  <DashboardStatsCard backgroundColor="bg-purple"*/}
+          {/*                      fontColorClass="text-purple"*/}
+          {/*                      font="fa-star"*/}
+          {/*                      value={appUser.points}*/}
+          {/*                      subtitle="Total Points"/>*/}
+          {/*  <DashboardStatsCard backgroundColor="bg-green"*/}
+          {/*                      fontColorClass="text-green"*/}
+          {/*                      font="fa-crown"*/}
+          {/*                      value={appUser.rank}*/}
+          {/*                      subtitle="My Rank"/>*/}
+          {/*  <DashboardStatsCard backgroundColor="bg-red"*/}
+          {/*                      fontColorClass="text-red"*/}
+          {/*                      font="fa-book"*/}
+          {/*                      value={appUser.courseCount}*/}
+          {/*                      subtitle="My Courses"/>*/}
+          {/*  <DashboardStatsCard backgroundColor="bg-yellow"*/}
+          {/*                      fontColorClass="text-yellow"*/}
+          {/*                      font="fa-coins"*/}
+          {/*                      value={appUser.coins}*/}
+          {/*                      subtitle="My Coins"/>*/}
+          {/*</div>*/}
           <div className="text-xl mt-5 flex justify-between">
             <div className="font-poppins text-xl m-1">My Courses</div>
             <div className="mt-3 mr-4 text-purple-700 font-semibold text-sm cursor-pointer">View More</div>
@@ -168,18 +166,20 @@ export default function Dashboard() {
           <div className="row">
             {/* <Slider {...settings}> */}
             <div className="grid lg:grid-cols-2 mt-4 gap-2">
-              {courses.map((course) => (
-                <Link to={`my-course-details/${course.id}`}>
-                  <MyCourseCard key={course.id}
-                                title={course.title}
-                                author={'Saman Kumara'}
-                                description={course.description}
-                                imageUrl={course.imageUrl}
-                                rating={course.rating}
-                                difficulty={course.difficulty}
-                                isBestSeller={course.isBestSeller}/>
-                </Link>
-              ))}
+              {
+                courses.slice(0, 6).map((course) => (
+                  <Link to={`my-course-details/${course.id}`}>
+                    <MyCourseCard key={course.id}
+                                  title={course.title}
+                                  author={'Saman Kumara'}
+                                  description={course.description}
+                                  imageUrl={course.imageUrl}
+                                  rating={course.rating}
+                                  difficulty={course.difficulty}
+                                  isBestSeller={course.isBestSeller}/>
+                  </Link>
+                ))
+              }
             </div>
             {/* </Slider> */}
           </div>
