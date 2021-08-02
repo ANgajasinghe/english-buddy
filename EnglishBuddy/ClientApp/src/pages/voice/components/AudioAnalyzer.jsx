@@ -83,8 +83,8 @@ export default function AudioAnalyzer(props) {
                 onPlay={() => console.log("onPlay")}
               />
               <div className="mt-5 mb-3">
-              <Button variant="contained" size="large" color="primary"
-                      onClick={() => upload(stopAudio.url)}>EVALUATE</Button>
+                <Button variant="contained" size="large" color="primary"
+                        onClick={() => upload(stopAudio.url)}>EVALUATE</Button>
               </div>
             </React.Fragment>
           )
