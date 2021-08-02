@@ -1,8 +1,6 @@
 import {Avatar, Card} from '@material-ui/core';
 import ProfileImage from './ProfileImage';
 import {NormalText, SecondaryText} from './Text';
-import ProgressBar from './ProgressBar';
-import {Line} from 'react-chartjs-2';
 import {useAppSelector} from '../../@core/app-store/hooks';
 
 // const useStyles = makeStyles((theme) => ({
@@ -125,7 +123,7 @@ export default function UserProfile() {
           <ProgressBar name={'Writing'}
                        value={appUser.writing + 1}/>
         </div> */}
-        
+
         <hr className='mt-4'/>
         <div className='text-md font-bold text-gray-500 text-left mt-3'>
           Leaderboard

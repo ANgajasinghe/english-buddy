@@ -1,5 +1,4 @@
 import './style.css';
-import AppNavBar from '../components/AppNavBar';
 import SideNav from '../components/SideNav';
 
 export default function Layout(props: any) {
@@ -11,7 +10,7 @@ export default function Layout(props: any) {
 
       <div className="flex">
         <div className='w-14 fixed z-50'>
-          <SideNav />
+          <SideNav/>
         </div>
 
         <div className='ml-10 w-full'>

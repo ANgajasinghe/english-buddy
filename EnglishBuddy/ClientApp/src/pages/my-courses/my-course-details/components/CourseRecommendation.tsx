@@ -6,6 +6,7 @@ import ActivitySwitcher from "./ActivitySwitcher";
 import {useAppSelector} from "../../../../@core/app-store/hooks";
 import ExtraLessons from "./ExtraLessons";
 import SampleQandA from "./SampleQandA";
+import Comment from "../../../comment"
 
 export function CourseRecommendation(props: { courseId: any }) {
   const [recommendation, setRecommendation] = useState<UserRecommendationModel>({} as UserRecommendationModel);
@@ -147,12 +148,15 @@ export function CourseRecommendation(props: { courseId: any }) {
     <div>
       {recommendation?.steps != null && recommendation?.steps[0] !== 5 ? (
         <Stepper activeStep={activeStep} orientation="vertical">
-          {recommendation?.steps?.map((label) => (
-            <Step key={label}>
-              <StepLabel>{getStepLabel(label)}</StepLabel>
-              <StepContent>{getStepData(label)}</StepContent>
-            </Step>
-          ))}
+          {
+            recommendation?.steps?.map((label) => (
+              <Step key={label}>
+                <StepLabel>{getStepLabel(label)}</StepLabel>
+                <StepContent>{getStepData(label)}</StepContent>
+                <Comment/>
+              </Step>
+            ))
+          }
         </Stepper>
       ) : (
         <div>You have successfully completed the task.</div>
