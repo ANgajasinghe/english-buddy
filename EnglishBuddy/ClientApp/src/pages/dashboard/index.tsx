@@ -167,7 +167,7 @@ export default function Dashboard() {
             {/* <Slider {...settings}> */}
             <div className="grid lg:grid-cols-2 mt-4 gap-2">
               {
-                courses.slice(0, 6).map((course) => (
+                courses.map((course) => (
                   <Link to={`my-course-details/${course.id}`}>
                     <MyCourseCard key={course.id}
                                   title={course.title}
