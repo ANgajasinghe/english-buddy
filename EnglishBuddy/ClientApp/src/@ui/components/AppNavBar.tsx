@@ -84,7 +84,7 @@ export default function AppNavBar() {
             English Buddy
           </div>
           <div className='d-flex align-items-center'>
-            <Avatar alt='User Profile'
+            <Avatar alt=''
                     src={appUser.profilePictureUrl}
                     style={{
                       width: '35px',

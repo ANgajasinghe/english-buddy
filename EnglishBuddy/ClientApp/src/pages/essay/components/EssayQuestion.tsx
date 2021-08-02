@@ -7,10 +7,10 @@ export default function EssayQuestion(props: {
   valid: boolean
   submitted: boolean
   handleChange: any
-  handleSubmit: any
+  handleClickOpen: any
 }) {
   return (
-    <form onSubmit={props.handleSubmit}>
+    <form onSubmit={props.handleClickOpen}>
       <label className='font-semibold mt-5 text-lg'>
         {props.title}
       </label>

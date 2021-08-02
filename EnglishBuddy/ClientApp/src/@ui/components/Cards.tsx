@@ -11,7 +11,7 @@ export function DashboardStatsCard(props: {
   value: number;
 }) {
   return (
-    <Card className='mb-2 relative'>
+    <Card className='mb-2'>
       <span className={`${props.backgroundColor}-700 absolute h-100 p-0.5`}/>
       <div className='card-body p-4 flex justify-between align-items-center'>
         <div className={`${props.backgroundColor}-100 p-3 ps-4 pe-4 rounded-lg`}>
@@ -31,6 +31,25 @@ export function DashboardStatsCard(props: {
   );
 }
 
+export function DashboardStatsCardCircular(props: {
+  backgroundColor: string;
+  fontColorClass: string;
+  subtitle: string;
+  value: number;
+}) {
+  return (
+    <div className={`${props.backgroundColor}-200 mb-0.5 relative card-body p-1 rounded-xl`}>
+      <div>
+        <CountUp className={`text-sm font-semibold font-Josefin text-right ${props.fontColorClass}-600`}
+                 end={props.value}/>
+        <div className={`text-gray-400 font-Josefin text-sm p-0 ${props.fontColorClass}-500`}>
+          {props.subtitle}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function MyCourseCard(props: {
   title: string;
   author: string;
@@ -41,15 +60,18 @@ export function MyCourseCard(props: {
   rating: number;
 }) {
   return (
-    <div className='col-sm-12'>
-      <Card className='me-2 p-3 cursor-pointer'>
+    <div className='bg-white col-sm-12 rounded-2xl'>
+      <div className='me-2 p-3 cursor-pointer'
+            style={{
+              borderRadius: '10px'
+            }}>
         <CardActionArea>
           <div className='row g-0'>
             <div className='col-sm-5'>
               <img className='w-full object-cover h-full transform cursor-pointer'
                    height='150'
                    width='100%'
-                   alt='Foo eating a sandwich.'
+                   alt=''
                    src={props.imageUrl}/>
             </div>
             <div className='col-sm-7'>
@@ -91,7 +113,7 @@ export function MyCourseCard(props: {
             </div>
           </div>
         </CardActionArea>
-      </Card>
+      </div>
     </div>
   );
 }

@@ -1,20 +1,23 @@
 import {useEffect, useState} from "react";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {ThemeProvider} from "@material-ui/core";
+// import signalR from "@microsoft/signalr";
 import {LoadingSubject} from "./@core/subject-services";
 import {useAppDispatch} from "./@core/app-store/hooks";
 import {ApplicationUserModel} from "./@core/models/applicationUser";
+// import {SaModel} from "./@core/models/saModel";
 import {theme} from "./@ui/theme";
 import Layout from "./@ui/layout";
 import ProtectedRoute from "./@ui/components/ProtectedRoute";
 import Loading from "./@ui/components/loading";
 import {setAuth} from "./+auth/authSlice";
+// import {setReview} from "./pages/comment/commentSlice";
 import Login from "./+auth/login";
 import SignUp from "./+auth/sign-up";
 import Dashboard from "./pages/dashboard";
 import MyCourseDetails from "./pages/my-courses/my-course-details";
-import "./App.css";
 import Frontpage from "./pages/front-page";
+import "./App.css";
 
 const App = () => {
   const dispatch = useAppDispatch();
@@ -49,8 +52,6 @@ const App = () => {
   //   });
   // }, []);
   //
-  // setConnection(_connection);
-  //
   // useAppSelector((state) => {
   //   if (state.comment.comment != null && state.comment.comment !== '') {
   //     connection.invoke('sendcomment', state.comment.comment);
@@ -68,8 +69,6 @@ const App = () => {
             <ProtectedRoute path="/dashboard" component={Dashboard}/>
             <Route path="/my-course-details/:courseId" component={MyCourseDetails}/>
             <Route path="/front-page" component={Frontpage}/>
-            {/*<ProtectedRoute exact path='/home' component={Home}/>*/}
-            {/*<ProtectedRoute exact path='/course/:courseId' component={Course}/>*/}
           </Layout>
         </Switch>
       </Router>

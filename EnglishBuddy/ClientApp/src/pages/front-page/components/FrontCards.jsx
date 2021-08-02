@@ -45,9 +45,17 @@ export function FrontCards(props) {
                 </div>
               </div>
             </div>
+<<<<<<< HEAD
           </div>
         </CardActionArea>
       </Card>
     </div>
   );
 }
+=======
+          </CardActionArea>
+        </Card>
+      </div>
+    );
+  }
+>>>>>>> 71e6c2e1defcde80e8fad84352d48c79468deab5

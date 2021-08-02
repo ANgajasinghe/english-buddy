@@ -14,8 +14,8 @@ export default function ProgressBar(props: any) {
   }, [props.value]);
 
   return (
-    <div className='mb-2'>
-      <div className='d-flex justify-content-between mb-1'>
+    <div className='mb-4'>
+      <div className='d-flex justify-content-between mb-2'>
         <NormalText>
           <small className='text-sm font-bold'>
             {props.name}

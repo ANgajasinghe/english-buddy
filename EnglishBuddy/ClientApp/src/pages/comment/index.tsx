@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import './style.css';
 import {Box, TextareaAutosize} from '@material-ui/core';
 import {useAppDispatch, useAppSelector} from '../../@core/app-store/hooks';
 import Rating, {IconContainerProps} from '@material-ui/lab/Rating';
@@ -9,6 +8,7 @@ import SentimentDissatisfiedIcon from '@material-ui/icons/SentimentDissatisfied'
 import SentimentSatisfiedIcon from '@material-ui/icons/SentimentSatisfied';
 import SentimentSatisfiedAltIcon from '@material-ui/icons/SentimentSatisfiedAltOutlined';
 import SentimentVerySatisfiedIcon from '@material-ui/icons/SentimentVerySatisfied';
+import './style.css';
 
 export default function Comment() {
   const dispatch = useAppDispatch();
@@ -46,14 +46,14 @@ export default function Comment() {
 
   function IconContainer(props: IconContainerProps) {
     const {value, ...other} = props;
-    return <span {...other}>{customIcons[value].icon}</span>;
+    return (
+      <span {...other}>{customIcons[value].icon}</span>
+    );
   }
 
   return (
     <div className='mt-4'>
-      <h3>
-        Comment Test - 01
-      </h3>
+      <h3>Prove us your feedback on the activity</h3>
       <div className='row mt-4 mb-4'>
         <Box component='fieldset' mb={3} borderColor='transparent'>
           <Rating name='customized-icons'
