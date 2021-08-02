@@ -40,6 +40,9 @@
     <ProjectReference Include="..\EnglishBuddy.Domain\EnglishBuddy.Domain.csproj" />
     <ProjectReference Include="..\EnglishBuddy.ML\EnglishBuddy.ML.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ML-Models" />
+  </ItemGroup>
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <Exec Command="node --version" ContinueOnError="true">
       <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
