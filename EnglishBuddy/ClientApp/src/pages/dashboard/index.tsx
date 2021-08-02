@@ -92,10 +92,10 @@ export default function Dashboard() {
                   borderRadius: '10px',
                   backgroundColor: '#FEE2E2'
                 }}>
-            <p className="f-secondary font-bold text-2xl">
+            <p className="text-red-600 font-bold text-2xl">
               Hello {appUser.firstName}, Welcome Back!
             </p>
-            <p className="w-75 mt-10 text-xl pr-5 font-semibold text-red-600">
+            <p className="w-75 mt-10 text-xl pr-5 font-semibold text-red-600 f-secondary">
               Join with the next revolution in English learning!
             </p>
             <p className="w-75 mt-3 mb-5 text-lg pr-5 font-semibold">

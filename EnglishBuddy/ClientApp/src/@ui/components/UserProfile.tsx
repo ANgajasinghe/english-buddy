@@ -140,22 +140,18 @@ export default function UserProfile() {
           <div className="grid lg:grid-cols-2 mt-3 gap-3">
             <DashboardStatsCardCircular backgroundColor="bg-purple"
                                         fontColorClass="text-purple"
-                                        font="fa-star"
                                         value={appUser.points}
                                         subtitle="Total Points"/>
             <DashboardStatsCardCircular backgroundColor="bg-green"
                                         fontColorClass="text-green"
-                                        font="fa-crown"
                                         value={appUser.rank}
                                         subtitle="My Rank"/>
             <DashboardStatsCardCircular backgroundColor="bg-red"
                                         fontColorClass="text-red"
-                                        font="fa-book"
                                         value={appUser.courseCount}
                                         subtitle="My Courses"/>
             <DashboardStatsCardCircular backgroundColor="bg-yellow"
                                         fontColorClass="text-yellow"
-                                        font="fa-coins"
                                         value={appUser.coins}
                                         subtitle="My Coins"/>
           </div>
