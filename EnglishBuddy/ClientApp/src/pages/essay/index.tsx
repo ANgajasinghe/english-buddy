@@ -98,6 +98,7 @@ export default function Essay(props: {
       }
       <div>
         <EssayQuestion title={props.activity.title}
+                       description={props.activity.description}
                        wordLimit={props.activity.wordLimit}
                        wordCount={wordCount}
                        answer={answer}

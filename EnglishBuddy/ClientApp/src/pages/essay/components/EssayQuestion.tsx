@@ -1,5 +1,6 @@
 export default function EssayQuestion(props: {
   title: string
+  description: string
   wordLimit: number
   wordCount: number
   answer: string
@@ -12,6 +13,9 @@ export default function EssayQuestion(props: {
     <form onSubmit={props.handleSubmit}>
       <label className='font-semibold mt-5 text-lg'>
         {props.title}
+      </label>
+      <label className='mt-3'>
+        {props.description}
       </label>
       <textarea className='w-100 px-4 py-3 mt-4 focus:outline-none bg-gray-100'
                 value={props.answer}
