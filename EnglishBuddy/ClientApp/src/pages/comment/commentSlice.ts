@@ -1,5 +1,3 @@
-// noinspection JSUnusedGlobalSymbols
-
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {RootState} from '../../@core/app-store/store';
 import {SaModel} from '../../@core/models/saModel';

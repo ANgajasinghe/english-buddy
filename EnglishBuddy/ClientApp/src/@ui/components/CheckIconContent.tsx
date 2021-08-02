@@ -1,5 +1,3 @@
-// noinspection JSUnusedGlobalSymbols
-
 import CheckIcon from '@material-ui/icons/Check';
 import {SecondaryText} from './Text';
 

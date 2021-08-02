@@ -1,4 +1,3 @@
-// noinspection JSUnusedGlobalSymbols
 export interface VoiceModel {
   score: number
   speaking_rate: number

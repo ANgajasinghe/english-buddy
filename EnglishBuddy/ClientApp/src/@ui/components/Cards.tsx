@@ -33,6 +33,7 @@ export function DashboardStatsCard(props: {
 
 export function MyCourseCard(props: {
   title: string;
+  author: string;
   description: string;
   imageUrl: string;
   isBestSeller: boolean;
@@ -60,7 +61,9 @@ export function MyCourseCard(props: {
                   <i>{props.description}</i>
                 </small>
                 <div className='text-sm'>
-                  <p>jason placeholder, Saman Kumara</p>
+                  <p className='font-semibold'>
+                    {props.author}
+                  </p>
                   <div className='flex mt-1'>
                     <p className='font-bold text-yellow-600'>
                       {props.rating}.0

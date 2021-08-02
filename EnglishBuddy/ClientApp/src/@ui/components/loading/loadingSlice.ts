@@ -1,5 +1,3 @@
-// noinspection JSUnusedGlobalSymbols
-
 import {createSlice} from '@reduxjs/toolkit'
 import type {RootState} from '../../../@core/app-store/store'
 

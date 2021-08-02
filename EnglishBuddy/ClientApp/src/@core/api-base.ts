@@ -1,5 +1,3 @@
-// noinspection JSUnusedGlobalSymbols
-
 import axios from 'axios';
 import {LoadingSubject} from './subject-services'
 
