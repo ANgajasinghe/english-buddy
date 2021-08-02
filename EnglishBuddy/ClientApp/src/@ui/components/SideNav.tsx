@@ -1,13 +1,13 @@
 export default function SideNav() {
   return (
-    <div className='relative shadow-lg h-screen'>
+    <div className='relative bg-white h-screen'>
       <div className='flex justify-center flex-wrap cursor-pointer'
            style={{
              height: '100%'
            }}>
         <div className='text-center'>
           <div
-            className='bg-purple-800 mt-1 flex justify-center mb-10 mx-1 flex-wrap content-center rounded-2xl h-14 w-14'>
+            className='bg-purple-800 mt-1 flex justify-center mb-10 mx-1 flex-wrap content-center rounded-2xl h-12 w-12'>
             <div className='text-white'>
               EB
             </div>

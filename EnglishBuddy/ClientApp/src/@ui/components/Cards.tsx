@@ -11,7 +11,7 @@ export function DashboardStatsCard(props: {
   value: number;
 }) {
   return (
-    <Card className='mb-2 relative'>
+    <Card className='mb-2'>
       <span className={`${props.backgroundColor}-700 absolute h-100 p-0.5`}/>
       <div className='card-body p-4 flex justify-between align-items-center'>
         <div className={`${props.backgroundColor}-100 p-3 ps-4 pe-4 rounded-lg`}>
@@ -38,11 +38,11 @@ export function DashboardStatsCardCircular(props: {
   value: number;
 }) {
   return (
-    <div className={`${props.backgroundColor}-200 mb-2 relative card-body px-2 py-3 rounded-2xl`}>
+    <div className={`${props.backgroundColor}-200 mb-0.5 relative card-body p-1 rounded-xl`}>
       <div>
-        <CountUp className={`md:text-2xl sm:text-xl font-semibold text-right ${props.fontColorClass}-600`}
+        <CountUp className={`text-sm font-semibold text-right ${props.fontColorClass}-600`}
                  end={props.value}/>
-        <div className={`text-gray-400 p-0 mt-1 ${props.fontColorClass}-500`}>
+        <div className={`text-gray-400 text-sm p-0 ${props.fontColorClass}-500`}>
           {props.subtitle}
         </div>
       </div>

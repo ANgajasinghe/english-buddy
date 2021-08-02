@@ -20,6 +20,7 @@ namespace EnglishBuddy.Domain.Entities
         [Required] public string Language { get; set; }
         [Required] public int Grammar { get; set; }
         [Required] public int Speaking { get; set; }
+        [Required] public int Spelling { get; set; }
         [Required] public int Writing { get; set; }
         [Required] public int Rank { get; set; }
         [Required] public int Points { get; set; }

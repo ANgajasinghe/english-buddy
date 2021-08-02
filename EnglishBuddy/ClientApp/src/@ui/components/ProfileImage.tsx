@@ -9,8 +9,8 @@ const StyledBadge = withStyles((theme: Theme) =>
     badge: {
       width: '15px',
       height: '15px',
-      backgroundColor: '#fd726d',
-      color: '#fd726d',
+      backgroundColor: '#10B981',
+      color: '#10B981',
       borderRadius: '50%',
       boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
       '&::after': {
@@ -25,16 +25,16 @@ const StyledBadge = withStyles((theme: Theme) =>
         content: '""',
       },
     },
-    '@keyframes ripple': {
-      '0%': {
-        transform: 'scale(.8)',
-        opacity: 1,
-      },
-      '100%': {
-        transform: 'scale(2.4)',
-        opacity: 0,
-      },
-    },
+    // '@keyframes ripple': {
+    //   '0%': {
+    //     transform: 'scale(.8)',
+    //     opacity: 1,
+    //   },
+    //   '100%': {
+    //     transform: 'scale(2.4)',
+    //     opacity: 0,
+    //   },
+    // },
   })
 )(Badge);
 
@@ -51,11 +51,10 @@ export default function ProfileImage() {
       <Avatar alt=''
               src={appUser.profilePictureUrl}
               style={{
-                width: '70px',
-                height: '70px',
-                border: '2px',
+                width: '90px',
+                height: '90px',
                 borderStyle: 'solid',
-                borderColor: '#fd726d',
+              
               }}/>
     </StyledBadge>
   );

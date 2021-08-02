@@ -233,6 +233,9 @@ namespace EnglishBuddy.Migrations
                     b.Property<int>("Speaking")
                         .HasColumnType("int");
 
+                    b.Property<int>("Spelling")
+                        .HasColumnType("int");
+
                     b.Property<int>("Writing")
                         .HasColumnType("int");
 
