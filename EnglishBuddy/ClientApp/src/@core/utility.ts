@@ -1,6 +1,6 @@
 export class Utility {
-  // public static BASE_URL = 'https://english-buddy-365.herokuapp.com/api/';
-  public static BASE_URL = 'https://localhost:5001/api/';
+  public static BASE_URL = 'https://english-buddy-365.herokuapp.com/api/';
+  // public static BASE_URL = 'https://localhost:5001/api/';
 
   public static SIMILARITY_API_URL = 'https://semantic-similarity-api.herokuapp.com';
   // public static SIMILARITY_API_URL = 'http://localhost:8000';

@@ -122,15 +122,13 @@ function SimpleDialog(props) {
 
   return (
     <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open} fullWidth="lg" maxWidth="lg">
-
       <label className="flex justify-center my-3 text-xl font-semibold">
-        Let's Practice Word Pronounciations...
+        Let's Practice Word Pronunciations...
         </label>
           <div className="grid grid-cols-2 gap-4">
             <div className="shadow-sm m-3">
               <AudioAnalyzer childToParent={childToParent} clear={clear} />
             </div>
-
             <div className="shadow-sm m-3">
               <React.Fragment>
                 <Card className={classes.root} variant="outlined">
