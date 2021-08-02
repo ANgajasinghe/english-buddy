@@ -48,7 +48,7 @@ export default function ProfileImage() {
                    vertical: 'bottom',
                    horizontal: 'right',
                  }}>
-      <Avatar alt='Profile Image'
+      <Avatar alt=''
               src={appUser.profilePictureUrl}
               style={{
                 width: '70px',

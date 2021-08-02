@@ -14,7 +14,7 @@ export function FrontCards(props) {
                 <img className='w-full object-cover h-full transform cursor-pointer'
                      height='150'
                      width='100%'
-                     alt='Foo eating a sandwich.'
+                     alt=''
                      src='assets/english.jpg'/>
               </div>
               <div className='col-sm-12'>

@@ -21,7 +21,7 @@ export default function Login() {
 
   useEffect(() => {
     Get(["https://english-buddy-speech.herokuapp.com/"]).then((res) => {
-      console.log(res);
+      // console.log(res);
     })
   }, [])
 

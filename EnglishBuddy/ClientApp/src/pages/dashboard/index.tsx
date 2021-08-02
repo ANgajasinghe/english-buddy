@@ -71,11 +71,8 @@ export default function Dashboard() {
     <div className='mb-5'>
       <Notifications/>
       <div className="row mb-6 mt-0.5 g-5">
-        <div className="col-sm-3">
-          <UserProfile/>
-        </div>
         <div className="col-sm-9">
-          <p className="text-3xl font-poppins font-semibold m-1">
+          <p className="text-2xl font-poppins font-semibold m-1">
             Dashboard
           </p>
           {/*<div className="flex">*/}
@@ -84,30 +81,29 @@ export default function Dashboard() {
           {/*</div>*/}
           <div className="relative">
             <div className="absolute right-10 top-0">
-              <img width="250" src="./assets/undraw_social_friends_nsbv.svg" alt="hello"/>
+              <img width="250" src="./assets/undraw_social_friends_nsbv.svg" alt=""/>
             </div>
           </div>
-          <Card className="bg-red-100 mt-12 h-48 rounded-xl p-4 "
+          <div className="bg-red-100 mt-12 h-48 rounded-xl p-4 "
                 style={{
                   borderRadius: '10px',
                   backgroundColor: '#FEE2E2'
                 }}>
-            <p className="text-red-600 font-bold text-2xl">
+            <p className="f-secondary font-bold text-2xl">
               Hello {appUser.firstName}, Welcome Back!
             </p>
-            <p className="w-75 mt-10 text-xl pr-5 font-semibold text-red-600 f-secondary">
+            <div className="w-75 mt-10 text-lg pr-5 text-gray-600">
               Join with the next revolution in English learning!
-            </p>
-            <p className="w-75 mt-3 mb-5 text-lg pr-5 font-semibold">
+              <br/>
               Enroll to the newest courses by our best authors and make a difference...
-            </p>
-          </Card>
+            </div>
+          </div>
           <div className="text-xl mt-5 flex justify-between">
             <div className="font-poppins text-xl m-1">Statistics</div>
             <div className="mt-3 mr-4 text-purple-700 font-semibold text-sm cursor-pointer">View More</div>
           </div>
           <div className='grid sm:grid-cols-2 gap-4 mt-4'>
-            <Card className="p-4 rounded-2xl "
+            <div className="bg-white p-4 rounded-2xl "
                   style={{
                     borderRadius: '10px',
                   }}>
@@ -119,8 +115,8 @@ export default function Dashboard() {
                       data={data}
                       options={options}/>
               </div>
-            </Card>
-            <Card className="p-4 rounded-2xl "
+            </div>
+            <div className="bg-white p-4 rounded-2xl"
                   style={{
                     borderRadius: '10px'
                   }}>
@@ -137,7 +133,7 @@ export default function Dashboard() {
                 <ProgressBar name={'Academic Writing'}
                              value={appUser.writing + 1}/>
               </div>
-            </Card>
+            </div>
           </div>
           <div className="text-xl mt-5 flex justify-between">
             <div className="font-poppins text-xl m-1">My Courses</div>
@@ -147,7 +143,7 @@ export default function Dashboard() {
             {/* <Slider {...settings}> */}
             <div className="grid lg:grid-cols-2 mt-4 gap-2">
               {
-                courses.slice(0, 8).map((course) => (
+                courses.slice(0, 6).map((course) => (
                   <Link to={`my-course-details/${course.id}`}>
                     <MyCourseCard key={course.id}
                                   title={course.title}
@@ -169,35 +165,40 @@ export default function Dashboard() {
               <div className="mt-3 mr-4 text-purple-700 font-semibold text-sm cursor-pointer">View More</div>
             </div>
             <div className="grid lg:grid-cols-2 mt-4 gap-2">
-              <MyCourseCard title={"Learn Summarization Quickly"}
+              <MyCourseCard key={1}
+                            title={"Learn Summarization Quickly"}
                             author={'Saman Kumara'}
                             description={"Learn summarization easily and quickly!"}
                             imageUrl="https://cdn.analyticsvidhya.com/wp-content/uploads/2021/02/1cover1.jpg"
                             rating={4}
                             difficulty={"Advanced"}
                             isBestSeller={true}/>
-              <MyCourseCard title={"Face Interviews Fearlessly - I"}
+              <MyCourseCard key={2}
+                            title={"Face Interviews Fearlessly - I"}
                             author={'Saman Kumara'}
                             description={"Get ready to ace in interviews!"}
                             imageUrl="https://resources.workable.com/wp-content/uploads/2018/05/prepare-interviews-featured.png"
                             rating={5}
                             difficulty={"Intermediate"}
                             isBestSeller={true}/>
-              <MyCourseCard title={"Face Interviews Fearlessly - II"}
+              <MyCourseCard key={3}
+                            title={"Face Interviews Fearlessly - II"}
                             author={'Saman Kumara'}
                             description={"Get ready to ace in interviews!"}
                             imageUrl="https://resources.workable.com/wp-content/uploads/2018/05/prepare-interviews-featured.png"
                             rating={5}
                             difficulty={"Advanced"}
                             isBestSeller={true}/>
-              <MyCourseCard title={"Intermediate Essay Writing"}
+              <MyCourseCard key={4}
+                            title={"Intermediate Essay Writing"}
                             author={'Saman Kumara'}
                             description={"Brush up your essay writing skills!"}
                             imageUrl="https://www.balochistanvoices.com/wp-content/uploads/2019/09/essay-1021x580.jpg"
                             rating={2}
                             difficulty={"Intermediate"}
                             isBestSeller={true}/>
-              <MyCourseCard title={"Face Interviews Fearlessly - III"}
+              <MyCourseCard key={5}
+                            title={"Face Interviews Fearlessly - III"}
                             author={'Saman Kumara'}
                             description={"Get ready to ace in interviews!"}
                             imageUrl="https://resources.workable.com/wp-content/uploads/2018/05/prepare-interviews-featured.png"
@@ -206,6 +207,9 @@ export default function Dashboard() {
                             isBestSeller={true}/>
             </div>
           </h5>
+        </div>
+        <div className="col-sm-3">
+          <UserProfile/>
         </div>
       </div>
     </div>

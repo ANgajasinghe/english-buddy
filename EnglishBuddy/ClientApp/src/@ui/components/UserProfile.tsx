@@ -42,7 +42,7 @@ export default function UserProfile() {
   const appUser = useAppSelector((state) => state.auth.applicationUser);
 
   return (
-    <Card className='me-2 link-behavior p-3'
+    <div className='bg-white me-2 link-behavior p-3'
           style={{
             height: '100%',
             borderRadius: '10px',
@@ -193,7 +193,7 @@ export default function UserProfile() {
                        value={399}/>
         </div>
       </div>
-    </Card>
+    </div>
   );
 }
 
@@ -205,7 +205,7 @@ export function LeaderBoard(prop: {
   return (
     <Card className='p-2 m-2 bg-purple-200 flex justify-between'>
       <div className="flex">
-        <Avatar alt='Profile Image'
+        <Avatar alt=''
                 src={prop.imageUrl}
                 style={{
                   width: '30px',

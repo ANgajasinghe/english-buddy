@@ -38,11 +38,11 @@ export function DashboardStatsCardCircular(props: {
   value: number;
 }) {
   return (
-    <div className={`${props.backgroundColor}-200 mb-2 relative card-body p-4 rounded-3xl`}>
+    <div className={`${props.backgroundColor}-200 mb-2 relative card-body px-2 py-3 rounded-2xl`}>
       <div>
-        <CountUp className={`text-5xl font-semibold text-right ${props.fontColorClass}-600`}
+        <CountUp className={`md:text-2xl sm:text-xl font-semibold text-right ${props.fontColorClass}-600`}
                  end={props.value}/>
-        <div className={`text-gray-400 p-0 mt-1 text-lg ${props.fontColorClass}-500`}>
+        <div className={`text-gray-400 p-0 mt-1 ${props.fontColorClass}-500`}>
           {props.subtitle}
         </div>
       </div>
@@ -60,15 +60,18 @@ export function MyCourseCard(props: {
   rating: number;
 }) {
   return (
-    <div className='col-sm-12'>
-      <Card className='me-2 p-3 cursor-pointer'>
+    <div className='bg-white col-sm-12 rounded-2xl'>
+      <div className='me-2 p-3 cursor-pointer'
+            style={{
+              borderRadius: '10px'
+            }}>
         <CardActionArea>
           <div className='row g-0'>
             <div className='col-sm-5'>
               <img className='w-full object-cover h-full transform cursor-pointer'
                    height='150'
                    width='100%'
-                   alt='Foo eating a sandwich.'
+                   alt=''
                    src={props.imageUrl}/>
             </div>
             <div className='col-sm-7'>
@@ -110,7 +113,7 @@ export function MyCourseCard(props: {
             </div>
           </div>
         </CardActionArea>
-      </Card>
+      </div>
     </div>
   );
 }
