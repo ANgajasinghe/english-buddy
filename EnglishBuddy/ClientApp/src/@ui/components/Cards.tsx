@@ -60,21 +60,20 @@ export function MyCourseCard(props: {
   rating: number;
 }) {
   return (
-    <div className='bg-white col-sm-12 rounded-2xl'>
+    <div className='bg-white col-sm-12 rounded-lg'>
       <div className='me-2 p-3 cursor-pointer'
             style={{
               borderRadius: '10px'
             }}>
         <CardActionArea>
           <div className='row g-0'>
-            <div className='col-sm-5'>
-              <img className='w-full object-cover h-full transform cursor-pointer'
-                   height='150'
-                   width='100%'
+            <div className='col-sm-4'>
+              <img className='transform cursor-pointer h-36 w-36'
+               
                    alt=''
                    src={props.imageUrl}/>
             </div>
-            <div className='col-sm-7'>
+            <div className='col-sm-8'>
               <div className='card-body'>
                 <h6 className='text-lg font-bold'>
                   {props.title}

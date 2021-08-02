@@ -11,6 +11,7 @@ export class Utility {
   public static AUDIO_TEXT_TRANSCRIPTION_API_URL = 'https://english-buddy-speech.herokuapp.com';
   // public static AUDIO_TEXT_TRANSCRIPTION_API_URL = 'http://localhost:8000';
 
+  public static SIGNALR = 'https://english-buddy-365.herokuapp.com/';
   public static EMPTY = '';
 
   public static PARAPHRASING = 'Paraphrasing';

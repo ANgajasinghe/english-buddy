@@ -1,3 +1,10 @@
+import {
+  BrowserRouter as Router,
+  Link,
+  useLocation,
+  useParams
+} from "react-router-dom";
+
 export default function SideNav() {
   return (
     <div className='relative bg-white h-screen'>
@@ -13,10 +20,10 @@ export default function SideNav() {
             </div>
           </div>
           <NavButton iconName='las la-user'
-                     href={'/'}
+                     href={'/dashboard'}
                      label='My Profile'/>
           <NavButton iconName='las la-graduation-cap'
-                     href={'/'}
+                     href={'/my-courses'}
                      label='Projects'/>
           <NavButton iconName='las la-blog'
                      href={'/'}
@@ -35,12 +42,24 @@ export function NavButton(props: {
   label: string
   href: string
 }) {
+
+  const location = useLocation();
+
+  console.log(location);
+
   return (
-    // <Link href={props.href} passHref={true} >
+    <Link to={props.href}>
     <div>
       <i
-        className={`${props.iconName} text-2xl p-2 m-2  transform delay-150  text-purple-800 hover:bg-purple-800 hover:text-white rounded-r-full`}/>
+        className={`${props.iconName} 
+        ${location.pathname === props.href ? 'activeNav' : ''}
+        text-2xl p-2 m-2  
+        transform delay-150  
+        text-purple-800 
+        hover:bg-purple-800
+         hover:text-white 
+         rounded-r-full`}/>
     </div>
-    // </Link>
+    </Link>
   )
 }
