@@ -31,6 +31,28 @@ export function DashboardStatsCard(props: {
   );
 }
 
+export function DashboardStatsCardCircular(props: {
+  backgroundColor: string;
+  fontColorClass: string;
+  font: string;
+  subtitle: string;
+  value: number;
+}) {
+  return (
+    <Card className='mb-2 relative'>
+      <div className='card-body p-4'>
+        <div>
+          <CountUp className='text-3xl font-semibold text-right'
+                   end={props.value}/>
+          <div className='text-gray-400 p-0 m-0 text-md'>
+            {props.subtitle}
+          </div>
+        </div>
+      </div>
+    </Card>
+  );
+}
+
 export function MyCourseCard(props: {
   title: string;
   author: string;

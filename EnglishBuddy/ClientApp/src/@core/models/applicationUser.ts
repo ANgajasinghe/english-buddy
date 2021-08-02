@@ -11,6 +11,7 @@ export interface ApplicationUserModel {
   city: string;
   age: number;
   language: string;
+  spelling: number;
   grammar: number;
   speaking: number;
   writing: number;

@@ -2,6 +2,7 @@ import {Avatar, Card} from '@material-ui/core';
 import ProfileImage from './ProfileImage';
 import {NormalText, SecondaryText} from './Text';
 import {useAppSelector} from '../../@core/app-store/hooks';
+import {DashboardStatsCardCircular} from "./Cards";
 
 // const useStyles = makeStyles((theme) => ({
 //   root: {
@@ -136,7 +137,28 @@ export default function UserProfile() {
           Stats
         </div>
         <div className='mt-3'>
-
+          <div className="grid lg:grid-cols-2 mt-3 gap-3">
+            <DashboardStatsCardCircular backgroundColor="bg-purple"
+                                        fontColorClass="text-purple"
+                                        font="fa-star"
+                                        value={appUser.points}
+                                        subtitle="Total Points"/>
+            <DashboardStatsCardCircular backgroundColor="bg-green"
+                                        fontColorClass="text-green"
+                                        font="fa-crown"
+                                        value={appUser.rank}
+                                        subtitle="My Rank"/>
+            <DashboardStatsCardCircular backgroundColor="bg-red"
+                                        fontColorClass="text-red"
+                                        font="fa-book"
+                                        value={appUser.courseCount}
+                                        subtitle="My Courses"/>
+            <DashboardStatsCardCircular backgroundColor="bg-yellow"
+                                        fontColorClass="text-yellow"
+                                        font="fa-coins"
+                                        value={appUser.coins}
+                                        subtitle="My Coins"/>
+          </div>
         </div>
         <hr className='mt-4'/>
         <div className='text-md font-bold text-gray-500 text-left mt-3'>
@@ -153,25 +175,25 @@ export default function UserProfile() {
                        imageUrl="https://bmkltsly13vb.compat.objectstorage.ap-mumbai-1.oraclecloud.com/cdn.edu.dailymirror.lk/uploads/articles_14_c6e5bb9dd4.jpg"
                        value={744}/>
           <LeaderBoard name="Ravindu Jeewantha"
-                       imageUrl="https://cdn.lifehack.org/wp-content/uploads/2014/03/shutterstock_97566446.jpg"
+                       imageUrl="https://asset1.modelmanagement.com/mm-eyJ0Ijp7InIiOnsibCI6/IjE2MDAiLCJoIjoiMTIw/MCJ9LCJ3Ijp7InR4Ijoi/R2F5YW4gUm9zaGl0aGFc/bm1vZGVsbWFuYWdlbWVu/dC5jb21cL21vZGVsXC9n/YXlhbi1yb3NoaXRoYSIs/InR4byI6eyJsIjoiNDc5/IiwiaCI6IjcyMCJ9fSwi/MCI6eyJ3Ijp7ImxnIjoi/MSIsImxnaCI6IjE5MSIs/ImxnZyI6Im0ifX19LCJp/ZCI6Imk0ODM1NjE2Iiwi/ZiI6ImpwZyJ9.jpg"
                        value={740}/>
           <LeaderBoard name="Tharinda Rajapaksha"
                        imageUrl="https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/49074705_1435767239887914_8682894099650445312_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=91dNpgj5VooAX9QY9Pc&_nc_ht=scontent.fcmb1-2.fna&oh=719f8b291180142231459c42fa93336b&oe=6122646C"
                        value={735}/>
           <LeaderBoard name="Nuvindu Nirmana"
-                       imageUrl="https://bmkltsly13vb.compat.objectstorage.ap-mumbai-1.oraclecloud.com/cdn.edu.dailymirror.lk/uploads/articles_14_c6e5bb9dd4.jpg"
+                       imageUrl="https://image.shutterstock.com/image-photo/portrait-handsome-indian-man-holding-600w-1628914090.jpg"
                        value={620}/>
           <LeaderBoard name="Nehan Ilangakoon"
-                       imageUrl="https://cdn.lifehack.org/wp-content/uploads/2014/03/shutterstock_97566446.jpg"
+                       imageUrl="https://lankafriends.com/wp-content/uploads/rtMedia/users/28286/2019/07/images.jpg?1627913755"
                        value={555}/>
           <LeaderBoard name="Akalanka Gajasinghe"
-                       imageUrl="https://i.pinimg.com/originals/78/b9/c8/78b9c84e6c2f1a052ccca947546a069a.jpg"
+                       imageUrl="https://images.thestar.com/m5RtOiOjzqh4LToac37BBGUV46I=/1086x815/smart/filters:cb(2700061000)/https://www.thestar.com/content/dam/thestar/news/gta/2013/06/04/14yearold_heading_to_mcmaster_university_in_fall/ciprodigy3.jpg"
                        value={412}/>
           <LeaderBoard name="Pasan Madusara"
-                       imageUrl="https://bmkltsly13vb.compat.objectstorage.ap-mumbai-1.oraclecloud.com/cdn.edu.dailymirror.lk/uploads/articles_14_c6e5bb9dd4.jpg"
+                       imageUrl="https://d1ac9zce9817ms.cloudfront.net/images/Indian%20man%20graduating-1592547580555.jpg"
                        value={410}/>
           <LeaderBoard name="Thisura Pamuditha"
-                       imageUrl="https://cdn.lifehack.org/wp-content/uploads/2014/03/shutterstock_97566446.jpg"
+                       imageUrl="https://bmkltsly13vb.compat.objectstorage.ap-mumbai-1.oraclecloud.com/cdn.dailymirror.lk/media/images/image_1536128626-6765813bf1.jpg"
                        value={399}/>
         </div>
       </div>

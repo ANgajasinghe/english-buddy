@@ -68,7 +68,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div>
+    <div className='mb-5'>
       <Notifications/>
       <div className="row mb-6 mt-0.5 g-5">
         <div className="col-sm-3">
@@ -127,38 +127,18 @@ export default function Dashboard() {
               <div className='text-md font-bold text-gray-500 text-left mb-3'>
                 Skills
               </div>
-              <ProgressBar name={'Grammar'}
-                           value={appUser.grammar + 1}/>
-              <ProgressBar name={'Speaking'}
-                           value={appUser.speaking + 1}/>
-              <ProgressBar name={'Writing'}
-                           value={appUser.writing + 1}/>
-              <ProgressBar name={'Reading'}
-                           value={appUser.writing + 1}/>
+              <div className='mt-4'>
+                <ProgressBar name={'Spelling'}
+                             value={appUser.spelling + 1}/>
+                <ProgressBar name={'Grammar'}
+                             value={appUser.grammar + 1}/>
+                <ProgressBar name={'English Speaking'}
+                             value={appUser.speaking + 1}/>
+                <ProgressBar name={'Academic Writing'}
+                             value={appUser.writing + 1}/>
+              </div>
             </Card>
           </div>
-          {/*<div className="grid lg:grid-cols-4 mt-4 gap-5">*/}
-          {/*  <DashboardStatsCard backgroundColor="bg-purple"*/}
-          {/*                      fontColorClass="text-purple"*/}
-          {/*                      font="fa-star"*/}
-          {/*                      value={appUser.points}*/}
-          {/*                      subtitle="Total Points"/>*/}
-          {/*  <DashboardStatsCard backgroundColor="bg-green"*/}
-          {/*                      fontColorClass="text-green"*/}
-          {/*                      font="fa-crown"*/}
-          {/*                      value={appUser.rank}*/}
-          {/*                      subtitle="My Rank"/>*/}
-          {/*  <DashboardStatsCard backgroundColor="bg-red"*/}
-          {/*                      fontColorClass="text-red"*/}
-          {/*                      font="fa-book"*/}
-          {/*                      value={appUser.courseCount}*/}
-          {/*                      subtitle="My Courses"/>*/}
-          {/*  <DashboardStatsCard backgroundColor="bg-yellow"*/}
-          {/*                      fontColorClass="text-yellow"*/}
-          {/*                      font="fa-coins"*/}
-          {/*                      value={appUser.coins}*/}
-          {/*                      subtitle="My Coins"/>*/}
-          {/*</div>*/}
           <div className="text-xl mt-5 flex justify-between">
             <div className="font-poppins text-xl m-1">My Courses</div>
             <div className="mt-3 mr-4 text-purple-700 font-semibold text-sm cursor-pointer">View More</div>
@@ -167,7 +147,7 @@ export default function Dashboard() {
             {/* <Slider {...settings}> */}
             <div className="grid lg:grid-cols-2 mt-4 gap-2">
               {
-                courses.map((course) => (
+                courses.slice(0, 8).map((course) => (
                   <Link to={`my-course-details/${course.id}`}>
                     <MyCourseCard key={course.id}
                                   title={course.title}
@@ -192,30 +172,37 @@ export default function Dashboard() {
               <MyCourseCard title={"Learn Summarization Quickly"}
                             author={'Saman Kumara'}
                             description={"Learn summarization easily and quickly!"}
-                            imageUrl="assets/english.jpg"
+                            imageUrl="https://cdn.analyticsvidhya.com/wp-content/uploads/2021/02/1cover1.jpg"
                             rating={4}
-                            difficulty={"Intermediate"}
-                            isBestSeller={true}/>
-              <MyCourseCard title={"Letter Writing"}
-                            author={'Saman Kumara'}
-                            description={"Learn how to write formal letters..."}
-                            imageUrl="assets/english.jpg"
-                            rating={5}
                             difficulty={"Advanced"}
                             isBestSeller={true}/>
-              <MyCourseCard title={"Face Interviews Fearlessly"}
+              <MyCourseCard title={"Face Interviews Fearlessly - I"}
                             author={'Saman Kumara'}
                             description={"Get ready to ace in interviews!"}
-                            imageUrl="assets/english.jpg"
+                            imageUrl="https://resources.workable.com/wp-content/uploads/2018/05/prepare-interviews-featured.png"
+                            rating={5}
+                            difficulty={"Intermediate"}
+                            isBestSeller={true}/>
+              <MyCourseCard title={"Face Interviews Fearlessly - II"}
+                            author={'Saman Kumara'}
+                            description={"Get ready to ace in interviews!"}
+                            imageUrl="https://resources.workable.com/wp-content/uploads/2018/05/prepare-interviews-featured.png"
                             rating={5}
                             difficulty={"Advanced"}
                             isBestSeller={true}/>
               <MyCourseCard title={"Intermediate Essay Writing"}
                             author={'Saman Kumara'}
                             description={"Brush up your essay writing skills!"}
-                            imageUrl="assets/english.jpg"
+                            imageUrl="https://www.balochistanvoices.com/wp-content/uploads/2019/09/essay-1021x580.jpg"
                             rating={2}
                             difficulty={"Intermediate"}
+                            isBestSeller={true}/>
+              <MyCourseCard title={"Face Interviews Fearlessly - III"}
+                            author={'Saman Kumara'}
+                            description={"Get ready to ace in interviews!"}
+                            imageUrl="https://resources.workable.com/wp-content/uploads/2018/05/prepare-interviews-featured.png"
+                            rating={5}
+                            difficulty={"Advanced"}
                             isBestSeller={true}/>
             </div>
           </h5>
