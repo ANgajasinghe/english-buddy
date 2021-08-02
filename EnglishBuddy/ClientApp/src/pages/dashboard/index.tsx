@@ -40,7 +40,7 @@ export default function Dashboard() {
   return (
     <div>
 
-      <Notifications></Notifications>
+      <Notifications/>
 
 
       <div className="row mb-6 mt-0.5 g-5">

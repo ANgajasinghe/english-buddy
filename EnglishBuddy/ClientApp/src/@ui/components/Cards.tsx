@@ -49,7 +49,7 @@ export function MyCourseCard(props: {
                    height='150'
                    width='100%'
                    alt='Foo eating a sandwich.'
-                   src='assets/english.jpg'/>
+                   src={props.imageUrl}/>
             </div>
             <div className='col-sm-7'>
               <div className='card-body'>
