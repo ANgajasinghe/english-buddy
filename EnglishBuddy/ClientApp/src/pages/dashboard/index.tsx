@@ -86,7 +86,7 @@ export default function Dashboard() {
             <div className=" text-purple-700 font-semibold text-sm cursor-pointer"> View More</div>
 
           </div>
-          <div className="row mt-4">
+          <div className="row mt-3">
             {/* <Slider {...settings}> */}
             <div className="grid lg:grid-cols-2 mt-4 gap-2">
               {courses.map((course) => (
