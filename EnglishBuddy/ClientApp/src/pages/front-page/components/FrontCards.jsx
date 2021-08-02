@@ -1,7 +1,6 @@
 import React from 'react';
-import { Card, CardActionArea } from '@material-ui/core';
+import {Card, CardActionArea} from '@material-ui/core';
 import Rating from '@material-ui/lab/Rating';
-import CountUp from 'react-countup';
 
 
 export function FrontCards(props) {
@@ -12,9 +11,9 @@ export function FrontCards(props) {
           <div className='col'>
             <div className='col-sm-12'>
               <img className='w-full h-48 object-cover transform cursor-pointer  rounded-lg'
-                width='100%'
-                alt='Foo eating a sandwich.'
-                src={props.imageUrl} />
+                   width='100%'
+                   alt='Foo eating a sandwich.'
+                   src={props.imageUrl}/>
             </div>
             <div className='col-sm-12'>
               <div className='card-body'>
@@ -31,10 +30,10 @@ export function FrontCards(props) {
                       {props.rating}.0
                     </p>
                     <Rating className='ms-2'
-                      name='read-only'
-                      size='small'
-                      value={props.rating}
-                      readOnly />
+                            name='read-only'
+                            size='small'
+                            value={props.rating}
+                            readOnly/>
                   </div>
                   <div className='flex justify-between mt-1'>
                     <p className='text-blue-700 mt-1 font-bold'>
