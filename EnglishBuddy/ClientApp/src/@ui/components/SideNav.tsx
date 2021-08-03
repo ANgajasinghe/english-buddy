@@ -15,8 +15,8 @@ export default function SideNav() {
             <div className='text-white'>
               <img src={a1}
                    alt=''
-                   width='35px'
-                   height='35px'/>
+                   width='25px'
+                   height='25px'/>
             </div>
           </div>
           <NavButton iconName='las la-user'
