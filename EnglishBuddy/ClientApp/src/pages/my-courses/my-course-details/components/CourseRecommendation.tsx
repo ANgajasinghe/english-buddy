@@ -7,7 +7,6 @@ import {useAppSelector} from "../../../../@core/app-store/hooks";
 import ExtraLessons from "./ExtraLessons";
 import SampleQandA from "./SampleQandA";
 import Comment from "../../../comment"
-import {setEvaluated} from "../evaluationSlice";
 
 export function CourseRecommendation(props: { courseId: any }) {
   const [recommendation, setRecommendation] = useState<UserRecommendationModel>({} as UserRecommendationModel);

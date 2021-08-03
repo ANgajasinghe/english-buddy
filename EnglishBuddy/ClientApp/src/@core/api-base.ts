@@ -60,7 +60,7 @@ export const Delete = (path: string[]) => {
   })
 }
 
-const showErrors = (error: any) => {
+export const showErrors = (error: any) => {
   if (error != null) {
     if (Array.isArray(error.errors)) {
       // AlertSubject.next({isShow: true, err: error.errors[0]})

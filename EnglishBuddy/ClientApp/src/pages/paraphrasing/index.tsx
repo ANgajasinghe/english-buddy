@@ -1,11 +1,12 @@
 import {useState} from 'react'
 import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
-import {Add} from '../../@core/api-base'
+import axios from 'axios'
 import {Utility} from '../../@core/utility'
+import {showErrors} from '../../@core/api-base'
 import {useAppDispatch, useAppSelector} from '../../@core/app-store/hooks'
-import {SimilarityModel} from '../../@core/models/similarity'
 import {ActivityModel} from '../../@core/models/activity'
+import {LoadingSubject} from '../../@core/subject-services'
 import {ActivityResultModel} from '../../@core/models/activityResult'
 import ConfirmationDialog from '../../@ui/components/ConfirmationDialog'
 import {setEvaluated} from '../my-courses/my-course-details/evaluationSlice'
@@ -65,7 +66,7 @@ export default function Paraphrasing(props: {
     setOpen(false)
   }
 
-  const handleSubmit = async () => {
+  const handleSubmit = () => {
     setSubmitted(true)
     const data = {
       question: props.activity.description,
@@ -75,31 +76,45 @@ export default function Paraphrasing(props: {
       student_answer: answer
     }
     try {
-      const response = await Add([Utility.SIMILARITY_API_URL, 'paraphrasing'], data) as SimilarityModel
-      setResults(response)
-      const activityResult = {
-        applicationUserId: appUser.id,
-        activityId: props.activity.id,
-        studentAnswer: response.answers.student_answer,
-        modelAnswer: response.answers.model_answer,
-        wordCount: response.answers.word_count,
-        spellingGrammarMistakes: JSON.stringify(response.matches),
-        suggestions: response.suggestion,
-        ratio: response.ratio,
-        spellingScore: response.scores.spelling,
-        grammarScore: response.scores.grammar,
-        objectivityScore: response.scores.objectivity,
-        subjectivityScore: response.sentiment.subjectivity,
-        polarityScore: response.sentiment.polarity,
-        similarityScore: response.scores.similarity,
-        comprehensivenessScore: response.scores.comprehensiveness,
-        overallScore: response.overall,
-        createdUserId: appUser.id,
-        modifiedUserId: appUser.id
-      } as ActivityResultModel
-      dispatch(setEvaluated(activityResult))
-      setLoaded(true)
-      handleClose()
+      LoadingSubject.next(true)
+      axios.post(`${Utility.SIMILARITY_API_URL}/paraphrasing`, data).then((response: any) => {
+        if (response.status === 200 || response.status === 201) {
+          console.log(response.data)
+          setResults(response.data)
+          LoadingSubject.next(false)
+          const activityResult = {
+            applicationUserId: appUser.id,
+            activityId: props.activity.id,
+            studentAnswer: response.data.answers.student_answer,
+            modelAnswer: response.data.answers.model_answer,
+            wordCount: response.data.answers.word_count,
+            spellingGrammarMistakes: JSON.stringify(response.data.matches),
+            suggestions: response.data.suggestion,
+            ratio: response.data.ratio,
+            spellingScore: response.data.scores.spelling,
+            grammarScore: response.data.scores.grammar,
+            objectivityScore: response.data.scores.objectivity,
+            subjectivityScore: response.data.sentiment.subjectivity,
+            polarityScore: response.data.sentiment.polarity,
+            similarityScore: response.data.scores.similarity,
+            comprehensivenessScore: response.data.scores.comprehensiveness,
+            overallScore: response.data.overall,
+            createdUserId: appUser.id,
+            modifiedUserId: appUser.id
+          } as ActivityResultModel
+          dispatch(setEvaluated(activityResult))
+          setLoaded(true)
+          handleClose()
+        } else {
+          LoadingSubject.next(false);
+          setSubmitted(false)
+        }
+      }).catch(error => {
+        showErrors(error);
+        LoadingSubject.next(false);
+        setSubmitted(false)
+        console.log(error)
+      })
     } catch (error) {
       setSubmitted(false)
       console.log(error)
