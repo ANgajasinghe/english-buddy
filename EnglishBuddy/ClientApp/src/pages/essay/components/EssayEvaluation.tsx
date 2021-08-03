@@ -5,7 +5,7 @@ export default function EssayEvaluation(props: {
   results: EssayModel
 }) {
   return (
-    <div className='grid sm:grid-cols-2 md:grid-cols-4 gap-2'>
+    <div className='grid sm:grid-cols-2 md:grid-cols-4 gap-5 px-2'>
       <CircularIndicator value={props.results.score}
                          label='Total'/>
       <CircularIndicator value={props.results.essay_score}

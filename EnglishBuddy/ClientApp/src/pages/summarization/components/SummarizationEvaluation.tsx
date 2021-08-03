@@ -5,7 +5,7 @@ export default function SummarizationEvaluation(props: {
   results: SimilarityModel
 }) {
   return (
-    <div className='grid sm:grid-cols-3 md:grid-cols-6 gap-4'>
+    <div className='grid sm:grid-cols-3 md:grid-cols-6 gap-5 px-2'>
       <CircularIndicator value={props.results.overall}
                          label='Total'/>
       <CircularIndicator value={Math.round(props.results.scores.spelling)}
