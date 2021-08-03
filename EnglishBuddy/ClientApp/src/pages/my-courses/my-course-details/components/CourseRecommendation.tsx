@@ -6,7 +6,9 @@ import ActivitySwitcher from "./ActivitySwitcher";
 import {useAppSelector} from "../../../../@core/app-store/hooks";
 import ExtraLessons from "./ExtraLessons";
 import SampleQandA from "./SampleQandA";
-import Comment from "../../../comment"
+import Comment from "../../../comment";
+import a1 from "../../../voice/components/a1.png";
+import {Link} from "react-router-dom";
 
 export function CourseRecommendation(props: { courseId: any }) {
   const [recommendation, setRecommendation] = useState<UserRecommendationModel>({} as UserRecommendationModel);
@@ -160,23 +162,56 @@ export function CourseRecommendation(props: { courseId: any }) {
     }
   };
 
+  const renderHtml = () => {
+    return (
+      <div>
+        {recommendation?.steps != null && recommendation?.steps[0] !== 5 ? (
+          <Stepper activeStep={activeStep} orientation="vertical">
+            {
+              recommendation?.steps?.map((label) => (
+                <Step key={label}>
+                  <StepLabel>{getStepLabel(label)}</StepLabel>
+                  <StepContent>{getStepData(label)}</StepContent>
+                </Step>
+              ))
+            }
+          </Stepper>
+        ) : (
+          <div className='flex justify-center pt-10 mb-5'>
+            <div className='bg-white rounded-lg p-5 text-center'>
+              <div className='flex justify-center'>
+                <img src={a1} alt=''/>
+              </div>
+              <p className='mt-5 font-bold text-5xl text-yellow-500'>
+                Congratulations!
+              </p>
+              <p className='mt-5 font-semibold text-4xl text-blue-900'>
+                You have completed this course. Keep it up!
+              </p>
+              <Link to="/dashboard">
+                <Button variant="contained"
+                        className="mt-5"
+                        color="primary"
+                        onClick={handleNext}>
+                  Go to Profile
+                </Button>
+              </Link>
+            </div>
+          </div>
+        )}
+      </div>
+    )
+  }
+
   return (
     <div>
-      {recommendation?.steps != null && recommendation?.steps[0] !== 5 ? (
-        <Stepper activeStep={activeStep} orientation="vertical">
-          {
-            recommendation?.steps?.map((label) => (
-              <Step key={label}>
-                <StepLabel>{getStepLabel(label)}</StepLabel>
-                <StepContent>{getStepData(label)}</StepContent>
-
-              </Step>
-            ))
-          }
-        </Stepper>
-      ) : (
-        <div>You have successfully completed the task.</div>
-      )}
+      {
+        Object.keys(recommendation).length > 0 ? (
+          renderHtml()
+        ) : (
+          <div className='mt-2'>Loading...</div>
+        )
+      }
     </div>
   );
 }
