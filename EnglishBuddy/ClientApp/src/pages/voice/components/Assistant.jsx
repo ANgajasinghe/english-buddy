@@ -1,6 +1,6 @@
 import React from 'react';
 import a1 from './a1.png'
-import {useAppSelector} from "../../../@core/app-store/hooks";
+import { useAppSelector } from "../../../@core/app-store/hooks";
 
 export default function Assistant(props) {
   const appUser = useAppSelector((state) => state.auth.applicationUser);
@@ -16,17 +16,12 @@ export default function Assistant(props) {
     //   <img src={a1} alt=''/>
     // </div>
     <div className="py-1 px-3 ">
-      <div className="grid grid-cols-3 gap-4 shadow-sm bg-blue-400 py-3 px-4 rounded-lg bg-opacity-31">
-        <div className="col-span-2">
-          <div className="text-white font-semibold text-lg">{props.description}</div>
-        </div>
-        <div>
-          <img src={a1} alt='' width="100px" height="100px"/>
-        </div>
+      <div className="grid grid-cols-3 gap-1 px-4 rounded-lg bg-opacity-31">
+          <div className=" font-bold text-lg">{props.description}</div>
       </div>
-
-      <div className="mt-5 shadow-sm bg-purple-400 py-3 px-4  rounded-lg bg-opacity-31">
-        <div className="text-white text-lg">{props.modelAnswer}</div>
+      <div className="mt-5 px-4  rounded-lg bg-opacity-31">
+        <div className="text-lg font-semibold py-2">Hints</div>
+        <div className="text-lg">{props.modelAnswer}</div>
       </div>
 
     </div>
