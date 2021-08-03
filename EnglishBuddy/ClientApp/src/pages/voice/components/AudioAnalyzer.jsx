@@ -62,7 +62,6 @@ export default function AudioAnalyzer(props) {
           </button>
         )}
         {status && (
-
           <div onClick={stop}
                className="group bg-red-600 bg-opacity-70 hover:shadow-lg  rounded-full h-24 w-24 flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white " fill="none" viewBox="0 0 24 24"
