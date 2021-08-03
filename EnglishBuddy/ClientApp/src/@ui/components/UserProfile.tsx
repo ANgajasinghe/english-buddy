@@ -10,7 +10,8 @@ export default function UserProfile() {
   return (
     <div>
       <div className="bg-white p-3 rounded-lg">
-        <div className='text-end'>
+        <div className='text-end'
+             title='Sign Out'>
           <i className='fas fa-sign-out-alt text-red-800'
              aria-hidden='true'/>
         </div>
@@ -78,7 +79,6 @@ export default function UserProfile() {
           </div>
         </div>
       </div>
-
       <div className='bg-white p-3 rounded-lg mt-4 me-2'>
         <div className='text-md font-bold text-red-500 text-center mt-3'>
           Leaderboard
