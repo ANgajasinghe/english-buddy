@@ -35,7 +35,7 @@ const App = () => {
     return () => {
       LoadingSubject.unsubscribe();
     };
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     const _connection = new signalR.HubConnectionBuilder()
@@ -51,7 +51,7 @@ const App = () => {
     _connection.on('notifyresult', (data: SaModel) => {
       dispatch(setReview(data));
     });
-  }, []);
+  }, [dispatch]);
 
   useAppSelector((state) => {
     if (state.comment.comment != null && state.comment.comment !== '') {

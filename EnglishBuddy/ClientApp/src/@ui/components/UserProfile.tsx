@@ -12,7 +12,7 @@ export default function UserProfile() {
       <div className="bg-white p-3 rounded-lg">
         <div className='text-end'
              title='Sign Out'>
-          <i className='fas fa-sign-out-alt text-red-800'
+          <i className='fas fa-sign-out-alt text-red-700'
              aria-hidden='true'/>
         </div>
         <div className='text-center'>

@@ -47,10 +47,12 @@ export default function MyCourseDetails() {
 
   return (
     <div>
-      <h1 className="text-xl mb-3 mt-3 font-poppins text-white">
-        {course.title}
-      </h1>
-      <div className="flex text-xl mt-5 font-poppins mb-4 px-3 rounded-xl bg-blue-800 mb-2 border-2 text-white">
+      <div className="mt-3 bg-blue-900 py-3 px-2 rounded-xl">
+        <label className="ml-3 text-2xl font-poppins text-white font-semibold">
+          {course.title}
+        </label>
+      </div>
+      <div className="flex text-xl mt-3 font-poppins mb-4 px-2 rounded-xl mb-2">
         <IntroductionLesson introduction={course.introduction}
                             isCompletedIntroduction={course.isCompletedIntroduction}
                             onCourseComplete={onCourseComplete}/>
