@@ -51,7 +51,7 @@ export default function Comment() {
 
   return (
     <div className='mt-4'>
-      <h3 className="text-md font-semibold">Hey, Do not forget to add your feedback :)</h3>
+      <h3 className="text-md font-semibold">Hey, don't forget to add your feedback :)</h3>
       <div className='row mt-4 mb-4'>
         <Box component='fieldset' mb={3} borderColor='transparent'>
           <Rating name='customized-icons'

@@ -39,13 +39,11 @@ export function DashboardStatsCardCircular(props: {
 }) {
   return (
     <div className={`${props.backgroundColor}-100 mb-0.5 relative card-body p-1 rounded-xl`}>
-      <div>
-        <CountUp className={`text-sm font-semibold font-Josefin text-right ${props.fontColorClass}-600`}
-                 end={props.value}/>
-        <div className={`font-Josefin text-sm p-0 ${props.fontColorClass}-600`}>
-          {props.subtitle}
-        </div>
-      </div>
+      <CountUp className={`text-sm font-semibold font-Josefin text-right ${props.fontColorClass}-500`}
+               end={props.value}/>
+      <label className={`font-Josefin text-sm p-0 ${props.fontColorClass}-500`}>
+        {props.subtitle}
+      </label>
     </div>
   );
 }
