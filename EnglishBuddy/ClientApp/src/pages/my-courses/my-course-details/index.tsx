@@ -52,7 +52,7 @@ export default function MyCourseDetails() {
           {course.title}
         </label>
       </div>
-      <div className="flex text-xl mt-3 font-poppins mb-4 px-2 rounded-xl mb-2">
+      <div className="text-xl font-poppins rounded-xl">
         <IntroductionLesson introduction={course.introduction}
                             isCompletedIntroduction={course.isCompletedIntroduction}
                             onCourseComplete={onCourseComplete}/>
