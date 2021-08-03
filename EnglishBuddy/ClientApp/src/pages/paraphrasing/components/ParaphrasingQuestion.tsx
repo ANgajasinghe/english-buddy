@@ -7,10 +7,10 @@ export default function ParaphrasingQuestion(props: {
   valid: boolean
   submitted: boolean
   handleChange: any
-  handleClickOpen: any
+  handleSubmit: any
 }) {
   return (
-    <form onSubmit={props.handleClickOpen}>
+    <form onSubmit={props.handleSubmit}>
       <label className='font-semibold mt-5 text-lg'>
         {props.title}
       </label>
@@ -20,7 +20,8 @@ export default function ParaphrasingQuestion(props: {
       <textarea className='w-100 px-4 py-3 mt-4 focus:outline-none bg-gray-100'
                 value={props.answer}
                 onChange={props.handleChange}
-                rows={8}/>
+                rows={8}
+                disabled={props.submitted}/>
       {
         props.wordLimit - props.wordCount < 10 ? (
           <p className='text-end mt-1'>
@@ -34,7 +35,7 @@ export default function ParaphrasingQuestion(props: {
       }
       <div className='text-end mt-4'>
         {
-          !props.valid || props.wordLimit < props.wordCount ? (
+          props.submitted || !props.valid || props.wordLimit < props.wordCount ? (
             <button className='text-white text-uppercase bg-blue-800 px-4 py-2 rounded-lg bg-opacity-50
              cursor-not-allowed'
                     value='Evaluate'
