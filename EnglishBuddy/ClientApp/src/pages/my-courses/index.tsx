@@ -24,7 +24,6 @@ export default function MyCourses() {
     }
   };
 
-
   return (
     <div>
       <div className="grid lg:grid-cols-2 mt-4 gap-2">

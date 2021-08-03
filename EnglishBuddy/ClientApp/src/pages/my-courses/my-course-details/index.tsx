@@ -47,19 +47,19 @@ export default function MyCourseDetails() {
 
   return (
     <div>
-      <div className="flex mt-5 p-0 mb-4 px-3 rounded-xl bg-blue-800">
-        <h1 className="text-2xl ml-2 font-poppins text-white">
-          {course.title}
-        </h1>
+      <h1 className="text-xl mb-3 mt-3 font-poppins text-white">
+        {course.title}
+      </h1>
+      <div className="flex text-xl mt-5 font-poppins mb-4 px-3 rounded-xl bg-blue-800 mb-2 border-2 text-white">
+        <IntroductionLesson introduction={course.introduction}
+                            isCompletedIntroduction={course.isCompletedIntroduction}
+                            onCourseComplete={onCourseComplete}/>
+        {
+          course.isCompletedIntroduction ? (
+            <CourseRecommendation courseId={courseId}/>
+          ) : null
+        }
       </div>
-      <IntroductionLesson introduction={course.introduction}
-                          isCompletedIntroduction={course.isCompletedIntroduction}
-                          onCourseComplete={onCourseComplete}/>
-      {
-        course.isCompletedIntroduction ? (
-          <CourseRecommendation courseId={courseId}/>
-        ) : null
-      }
     </div>
   );
 }
