@@ -1,6 +1,7 @@
 import React from 'react';
 import a1 from './a1.png'
 import { useAppSelector } from "../../../@core/app-store/hooks";
+import ReactHtmlParser from "react-html-parser";
 
 export default function Assistant(props) {
   return (
@@ -10,7 +11,7 @@ export default function Assistant(props) {
       </div>
       <div className="mt-5 px-4  rounded-lg bg-opacity-31">
         <div className="text-lg font-semibold py-2">Hints</div>
-        <div className="text-lg">{props.modelAnswer}</div>
+        <div className="text-lg">{ReactHtmlParser(props.modelAnswer)}</div>
       </div>
     </div>
   );
