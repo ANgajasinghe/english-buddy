@@ -13,7 +13,10 @@ export default function SideNav() {
           <div
             className='bg-purple-800 mt-1 flex justify-center mb-10 mx-1 flex-wrap content-center rounded-2xl h-12 w-12'>
             <div className='text-white'>
-              <img src={a1} alt='' width="10px" height="10px"/>
+              <img src={a1}
+                   alt=''
+                   width='50px'
+                   height='50px'/>
             </div>
           </div>
           <NavButton iconName='las la-user'
@@ -39,22 +42,17 @@ export function NavButton(props: {
   label: string
   href: string
 }) {
-
   const location = useLocation();
-
-  console.log(location);
 
   return (
     <Link to={props.href}>
       <div>
-        <i
-          className={`${props.iconName} 
-        ${location.pathname === props.href ? 'activeNav' : ''}
-        text-2xl p-2 m-2  
-        transform delay-150  
-        text-purple-800 
-        hover:bg-purple-800
-         hover:text-white 
+        <i className={`${props.iconName} ${location.pathname === props.href ? 'activeNav' : ''}
+         text-2xl p-2 m-2
+         transform delay-150
+         text-purple-800
+         hover:bg-purple-800
+         hover:text-white
          rounded-r-full`}/>
       </div>
     </Link>
