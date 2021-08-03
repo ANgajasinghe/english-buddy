@@ -13,7 +13,7 @@ namespace EnglishBuddy.ML
         private static readonly string
             TRAIN_DATA_FILEPATH = Path.Combine("DataSet", "SentimentAnalysis", "reviews.csv");
 
-        private static readonly string MODEL_FILEPATH = Path.Combine("ML-Models", "MLModel.zip");
+        private static readonly string MODEL_FILEPATH = Path.Combine("ML-Models", "SM.zip");
 
 
         private static readonly MLContext mlContext = new(1);

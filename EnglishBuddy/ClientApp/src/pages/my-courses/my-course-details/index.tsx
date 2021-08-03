@@ -47,13 +47,21 @@ export default function MyCourseDetails() {
 
   return (
     <div>
-      <h1 className="text-2xl mt-3 text-center font-bold"> {course.title} </h1>
-      <IntroductionLesson introduction={course.introduction}
-                          isCompletedIntroduction={course.isCompletedIntroduction}
-                          onCourseComplete={onCourseComplete}/>
-      {course.isCompletedIntroduction ? (
-        <CourseRecommendation courseId={courseId}/>
-      ) : null}
+      <div className="mt-3 bg-blue-900 py-3 px-2 rounded-xl">
+        <label className="ml-3 text-2xl font-poppins text-white font-semibold">
+          {course.title}
+        </label>
+      </div>
+      <div className="text-xl font-poppins rounded-xl">
+        <IntroductionLesson introduction={course.introduction}
+                            isCompletedIntroduction={course.isCompletedIntroduction}
+                            onCourseComplete={onCourseComplete}/>
+        {
+          course.isCompletedIntroduction ? (
+            <CourseRecommendation courseId={courseId}/>
+          ) : null
+        }
+      </div>
     </div>
   );
 }

@@ -110,3 +110,7 @@
     overflow-y: auto;
     overflow-x: none;
 }
+
+.activeNav {
+    @apply bg-purple-800 text-white;
+}

@@ -1,12 +1,12 @@
 import UserProfile from "../../@ui/components/UserProfile";
-import { MyCourseCard } from "../../@ui/components/Cards";
-import { useAppSelector } from "../../@core/app-store/hooks";
-import { useEffect, useState } from "react";
-import { CourseModel } from "../../@core/models/course";
-import { Get } from "../../@core/api-base";
-import { Link } from "react-router-dom";
+import {MyCourseCard} from "../../@ui/components/Cards";
+import {useAppSelector} from "../../@core/app-store/hooks";
+import {useEffect, useState} from "react";
+import {CourseModel} from "../../@core/models/course";
+import {Get} from "../../@core/api-base";
+import {Link} from "react-router-dom";
 import ProgressBar from "../../@ui/components/ProgressBar";
-import { Line } from "react-chartjs-2";
+import {Line} from "react-chartjs-2";
 
 export default function Dashboard() {
   const appUser = useAppSelector((state) => state.auth.applicationUser);
@@ -57,7 +57,7 @@ export default function Dashboard() {
 
   return (
     <div className='mb-5'>
-      <Notifications />
+      <Notifications/>
       <div className="row mb-6 mt-0.5 g-5">
         <div className="col-sm-9">
           <p className="text-2xl font-poppins font-semibold m-1">
@@ -69,61 +69,61 @@ export default function Dashboard() {
           {/*</div>*/}
           <div className="relative">
             <div className="absolute right-10 top-0">
-              <img width="250" src="./assets/undraw_social_friends_nsbv.svg" alt="" />
+              <img width="250" src="./assets/undraw_social_friends_nsbv.svg" alt=""/>
             </div>
           </div>
           <div className="bg-red-100 mt-12 h-48 rounded-xl p-4 "
-            style={{
-              borderRadius: '10px',
-              backgroundColor: '#FEE2E2'
-            }}>
+               style={{
+                 borderRadius: '10px',
+                 backgroundColor: '#FEE2E2'
+               }}>
             <p className="f-secondary font-Nunito font-bold text-2xl">
               Hello {appUser.firstName}, Welcome Back!
             </p>
             <div className="w-75 mt-10 text-lg pr-5 text-gray-600">
               Join with the next revolution in English learning!
-              <br />
+              <br/>
               Enroll to the newest courses by our best authors and make a difference...
             </div>
           </div>
 
           <div className='grid sm:grid-cols-2 gap-4 mt-5'>
             <div className="bg-white p-4 rounded-2xl "
-              style={{
-                borderRadius: '10px',
-              }}>
+                 style={{
+                   borderRadius: '10px',
+                 }}>
               <div className='font-semibold text-gray-800 text-left mb-3'>
                 Progress Report
               </div>
               <div className='mt-3'>
                 <Line type={'line'}
-                  data={data}
-                  options={options} />
+                      data={data}
+                      options={options}/>
               </div>
             </div>
             <div className="bg-white p-4 rounded-2xl"
-              style={{
-                borderRadius: '10px'
-              }}>
+                 style={{
+                   borderRadius: '10px'
+                 }}>
 
               <div className='font-semibold text-gray-800 text-left mb-3'>
                 Skills
               </div>
               <div className='mt-4'>
                 <ProgressBar name={'Spelling'}
-                  value={appUser.spelling + 1} />
+                             value={appUser.spelling + 1}/>
                 <ProgressBar name={'Grammar'}
-                  value={appUser.grammar + 1} />
+                             value={appUser.grammar + 1}/>
                 <ProgressBar name={'English Speaking'}
-                  value={appUser.speaking + 1} />
+                             value={appUser.speaking + 1}/>
                 <ProgressBar name={'Academic Writing'}
-                  value={appUser.writing + 1} />
+                             value={appUser.writing + 1}/>
               </div>
             </div>
           </div>
 
           <div className="mt-5 flex justify-between">
-          
+
             <div className="font-poppins text-lg m-1 font-semibold">
               Your Courses
             </div>
@@ -145,13 +145,13 @@ export default function Dashboard() {
                 courses.slice(0, 4).map((course) => (
                   <Link to={`my-course-details/${course.id}`}>
                     <MyCourseCard key={course.id}
-                      title={course.title}
-                      author={'Saman Kumara'}
-                      description={course.description}
-                      imageUrl={course.imageUrl}
-                      rating={course.rating}
-                      difficulty={course.difficulty}
-                      isBestSeller={course.isBestSeller} />
+                                  title={course.title}
+                                  author={'Saman Kumara'}
+                                  description={course.description}
+                                  imageUrl={course.imageUrl}
+                                  rating={course.rating}
+                                  difficulty={course.difficulty}
+                                  isBestSeller={course.isBestSeller}/>
                   </Link>
                 ))
               }
@@ -209,7 +209,7 @@ export default function Dashboard() {
           </h5> */}
         </div>
         <div className="col-sm-3">
-          <UserProfile />
+          <UserProfile/>
         </div>
       </div>
     </div>
@@ -217,12 +217,10 @@ export default function Dashboard() {
 }
 
 export function Notifications() {
-  const [open, setOpen] = useState(false);
   return (
     <div className="fixed right-0 z-50">
       <div className="absolute flex right-0">
-        <button onClick={() => setOpen(true)}
-          className="border-r-0
+        <button className="border-r-0
                 border-l-2 border-b-2 border-t-2
                 rounded-l-full
                 border-purple-500
@@ -237,11 +235,11 @@ export function Notifications() {
                 ease-in-out
                 hover:bg-purple-500
                 hover:text-white">
-          <i className="far fa-envelope" />
+          <i className="far fa-envelope"/>
         </button>
         <div className="flex absolute left-0 h-4 w-4">
-          <span className="animate-ping  absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75" />
-          <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500" />
+          <span className="animate-ping  absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"/>
+          <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"/>
         </div>
         {/* <span className="flex h-3 w-3">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>

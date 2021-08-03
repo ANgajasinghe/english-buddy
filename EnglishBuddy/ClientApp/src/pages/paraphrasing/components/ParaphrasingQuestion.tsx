@@ -7,10 +7,10 @@ export default function ParaphrasingQuestion(props: {
   valid: boolean
   submitted: boolean
   handleChange: any
-  handleClickOpen: any
+  handleSubmit: any
 }) {
   return (
-    <form onSubmit={props.handleClickOpen}>
+    <form onSubmit={props.handleSubmit}>
       <label className='font-semibold mt-5 text-lg'>
         {props.title}
       </label>

@@ -21,7 +21,7 @@ namespace EnglishBuddy
 
             // Load model & create prediction engine
 
-            string modelPath = "ML-Models/MLModel.zip";
+            string modelPath = "ML-Models/SM.zip";
             ITransformer mlModel = mlContext.Model.Load(modelPath, out var modelInputSchema);
             var predEngine = mlContext.Model.CreatePredictionEngine<SAModelInput, SAModelOutput>(mlModel);
 

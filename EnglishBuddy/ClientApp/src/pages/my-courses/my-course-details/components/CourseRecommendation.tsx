@@ -60,6 +60,10 @@ export function CourseRecommendation(props: { courseId: any }) {
           <div className="mb-3">
             <ActivitySwitcher typeName={recommendation?.typeName}
                               activity={recommendation?.activity1}/>
+
+
+            <Comment/>
+
             <Button disabled={!isEvaluated}
                     variant="contained"
                     color="primary"
@@ -75,6 +79,10 @@ export function CourseRecommendation(props: { courseId: any }) {
           <div className="mb-3">
             <ActivitySwitcher typeName={recommendation?.typeName}
                               activity={recommendation?.activity2}/>
+
+
+            <Comment/>
+
             <Button disabled={!isEvaluated}
                     variant="contained"
                     color="primary"
@@ -97,6 +105,10 @@ export function CourseRecommendation(props: { courseId: any }) {
                         className="me-2">
                   Back
                 </Button>
+
+                <Comment/>
+
+
                 <Button variant="contained"
                         color="primary"
                         onClick={handleNext}>
@@ -118,6 +130,10 @@ export function CourseRecommendation(props: { courseId: any }) {
                       className="me-2">
                 Back
               </Button>
+
+
+              <Comment/>
+
               <Button variant="contained" color="primary" onClick={handleNext}>
                 Next
               </Button>
@@ -153,7 +169,7 @@ export function CourseRecommendation(props: { courseId: any }) {
               <Step key={label}>
                 <StepLabel>{getStepLabel(label)}</StepLabel>
                 <StepContent>{getStepData(label)}</StepContent>
-                <Comment/>
+
               </Step>
             ))
           }

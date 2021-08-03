@@ -33,7 +33,12 @@
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="ML-Models\MLModel.zip" />
+    <None Remove="ML-Models\SM.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ML-Models\SM.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EnglishBuddy.Application\EnglishBuddy.Application.csproj" />

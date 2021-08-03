@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Box, TextareaAutosize} from '@material-ui/core';
 import {useAppDispatch, useAppSelector} from '../../@core/app-store/hooks';
 import Rating, {IconContainerProps} from '@material-ui/lab/Rating';
@@ -12,8 +12,6 @@ import './style.css';
 
 export default function Comment() {
   const dispatch = useAppDispatch();
-
-  const [review, setReview] = useState(0);
 
   const commentHandler = (val: string) => {
     dispatch(setComment(val));
@@ -53,7 +51,7 @@ export default function Comment() {
 
   return (
     <div className='mt-4'>
-      <h3>Prove us your feedback on the activity</h3>
+      <h3 className="text-md font-semibold">Hey, don't forget to add your feedback :)</h3>
       <div className='row mt-4 mb-4'>
         <Box component='fieldset' mb={3} borderColor='transparent'>
           <Rating name='customized-icons'
@@ -63,11 +61,11 @@ export default function Comment() {
                   getLabelText={(value: number) => customIcons[value]?.label}
                   IconContainerComponent={IconContainer}/>
         </Box>
-        <TextareaAutosize className='w-100 mt-2'
+        <TextareaAutosize className='w-100 mt-2 focus:outline-none bg-gray-100'
                           aria-label='minimum height'
                           rowsMin={5}
                           onChange={(e) => commentHandler(e.target.value)}
-                          placeholder='Please type your answer here'/>
+                          placeholder='Add your comment'/>
       </div>
     </div>
   );
