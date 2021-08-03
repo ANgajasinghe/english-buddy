@@ -67,7 +67,6 @@ export function MyCourseCard(props: {
           <div className='row g-0'>
             <div className='col-sm-4'>
               <img className='transform cursor-pointer h-36 w-36'
-
                    alt=''
                    src={props.imageUrl}/>
             </div>
