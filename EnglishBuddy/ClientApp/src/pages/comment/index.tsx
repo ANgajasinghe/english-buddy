@@ -61,7 +61,7 @@ export default function Comment() {
                   getLabelText={(value: number) => customIcons[value]?.label}
                   IconContainerComponent={IconContainer}/>
         </Box>
-        <TextareaAutosize className='w-100 mt-2'
+        <TextareaAutosize className='w-100 mt-2 focus:outline-none bg-gray-100'
                           aria-label='minimum height'
                           rowsMin={5}
                           onChange={(e) => commentHandler(e.target.value)}
