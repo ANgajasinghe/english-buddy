@@ -19,7 +19,6 @@ import MyCourseDetails from "./pages/my-courses/my-course-details";
 import Frontpage from "./pages/front-page";
 import "./App.css";
 import MyCourses from './pages/my-courses/index';
-import { Utility } from "./@core/utility";
 
 const App = () => {
   const dispatch = useAppDispatch();
@@ -40,20 +39,20 @@ const App = () => {
 
   useEffect(() => {
     const _connection = new signalR.HubConnectionBuilder()
-       .withUrl("CommentNotification")
+      .withUrl("CommentNotification")
       .configureLogging(signalR.LogLevel.Information)
       .build();
-  
+
     _connection.start().then(() => {
       _connection.invoke('sendcomment', 'This content is bad');
       setConnection(_connection);
     });
-  
+
     _connection.on('notifyresult', (data: SaModel) => {
       dispatch(setReview(data));
     });
   }, []);
-  
+
   useAppSelector((state) => {
     if (state.comment.comment != null && state.comment.comment !== '') {
       connection.invoke('sendcomment', state.comment.comment);

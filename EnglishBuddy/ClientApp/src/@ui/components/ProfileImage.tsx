@@ -54,7 +54,7 @@ export default function ProfileImage() {
                 width: '90px',
                 height: '90px',
                 borderStyle: 'solid',
-              
+
               }}/>
     </StyledBadge>
   );

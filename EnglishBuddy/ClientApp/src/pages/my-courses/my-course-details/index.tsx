@@ -55,7 +55,7 @@ export default function MyCourseDetails() {
       mb-2 border-2">
         <h1 className="text-xl mb-3 mt-3 font-poppins text-center "> {course.title} </h1>
       </div>
-     
+
       <IntroductionLesson introduction={course.introduction}
                           isCompletedIntroduction={course.isCompletedIntroduction}
                           onCourseComplete={onCourseComplete}/>

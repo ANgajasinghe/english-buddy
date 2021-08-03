@@ -1,9 +1,6 @@
-import {
-  BrowserRouter as Router,
-  Link,
-  useLocation,
-  useParams
-} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
+import a1 from "../../pages/voice/components/a1.png";
+import React from "react";
 
 export default function SideNav() {
   return (
@@ -16,7 +13,7 @@ export default function SideNav() {
           <div
             className='bg-purple-800 mt-1 flex justify-center mb-10 mx-1 flex-wrap content-center rounded-2xl h-12 w-12'>
             <div className='text-white'>
-              EB
+              <img src={a1} alt='' width="10px" height="10px"/>
             </div>
           </div>
           <NavButton iconName='las la-user'
@@ -49,9 +46,9 @@ export function NavButton(props: {
 
   return (
     <Link to={props.href}>
-    <div>
-      <i
-        className={`${props.iconName} 
+      <div>
+        <i
+          className={`${props.iconName} 
         ${location.pathname === props.href ? 'activeNav' : ''}
         text-2xl p-2 m-2  
         transform delay-150  
@@ -59,7 +56,7 @@ export function NavButton(props: {
         hover:bg-purple-800
          hover:text-white 
          rounded-r-full`}/>
-    </div>
+      </div>
     </Link>
   )
 }

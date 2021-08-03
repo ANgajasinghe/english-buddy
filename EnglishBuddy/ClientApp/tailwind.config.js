@@ -4,9 +4,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        poppins:['Poppins'],
-        Josefin:['Josefin Sans'],
-        Nunito:['Nunito Sans']
+        poppins: ['Poppins'],
+        Josefin: ['Josefin Sans'],
+        Nunito: ['Nunito Sans']
       }
     },
   },

@@ -62,14 +62,14 @@ export function MyCourseCard(props: {
   return (
     <div className='bg-white col-sm-12 rounded-lg'>
       <div className='me-2 p-3 cursor-pointer'
-            style={{
-              borderRadius: '10px'
-            }}>
+           style={{
+             borderRadius: '10px'
+           }}>
         <CardActionArea>
           <div className='row g-0'>
             <div className='col-sm-4'>
               <img className='transform cursor-pointer h-36 w-36'
-               
+
                    alt=''
                    src={props.imageUrl}/>
             </div>

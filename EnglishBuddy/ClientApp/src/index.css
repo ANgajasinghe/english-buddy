@@ -111,6 +111,6 @@
     overflow-x: none;
 }
 
-.activeNav{
+.activeNav {
     @apply bg-purple-800 text-white;
 }

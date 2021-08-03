@@ -3,12 +3,12 @@ import {FrontCards} from "./components/FrontCards";
 import home1 from "./homeimage1.png";
 import Button from '@material-ui/core/Button';
 
-const settings = {
-  dots: true,
-  infinite: true,
-  slidesToShow: 2,
-  slidesToScroll: 1,
-};
+// const settings = {
+//   dots: true,
+//   infinite: true,
+//   slidesToShow: 2,
+//   slidesToScroll: 1,
+// };
 
 export default function Frontpage() {
   return (

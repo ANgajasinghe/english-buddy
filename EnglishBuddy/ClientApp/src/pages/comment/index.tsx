@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Box, TextareaAutosize} from '@material-ui/core';
 import {useAppDispatch, useAppSelector} from '../../@core/app-store/hooks';
 import Rating, {IconContainerProps} from '@material-ui/lab/Rating';
@@ -12,8 +12,6 @@ import './style.css';
 
 export default function Comment() {
   const dispatch = useAppDispatch();
-
-  const [review, setReview] = useState(0);
 
   const commentHandler = (val: string) => {
     dispatch(setComment(val));
