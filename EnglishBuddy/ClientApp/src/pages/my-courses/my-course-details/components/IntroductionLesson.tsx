@@ -17,13 +17,10 @@ export default function IntroductionLesson(props: {
     return (
       <div className="bg-white relative overflow-hidden shadow-sm rounded-xl mt-3 mb-3 p-3">
         {ReactHtmlParser(props.introduction)}
-
-        <Button
-          variant="contained"
-          color="primary"
-          className="p-2 bg-blue-700 mt-5 w-100 rounded-md text-center"
-          onClick={() => props.onCourseComplete()}
-        >
+        <Button variant="contained"
+                color="primary"
+                className="p-2 bg-blue-700 mt-5 w-100 rounded-md text-center"
+                onClick={() => props.onCourseComplete()}>
           Complete
         </Button>
       </div>
@@ -54,10 +51,8 @@ export default function IntroductionLesson(props: {
         duration-300 
         ease-in-out
         hover:bg-purple-500 
-        hover:text-white
-        "
-            onClick={() => setOpen(true)}
-          >
+        hover:text-white"
+            onClick={() => setOpen(true)}>
             Are you stuck?
           </button>
 
@@ -99,13 +94,11 @@ export function IntroDialogBox(props: {
   };
 
   return (
-    <Dialog
-      onClose={handleClose}
-      aria-labelledby="simple-dialog-title"
-      open={open}
-    >
+    <Dialog onClose={handleClose}
+            aria-labelledby="simple-dialog-title"
+            open={open}>
       <DialogTitle id="simple-dialog-title">
-        Don't worry let study again!
+        Don't worry, let's study again!
       </DialogTitle>
       {ReactHtmlParser(introduction)}
     </Dialog>
