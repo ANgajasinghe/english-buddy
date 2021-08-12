@@ -1,11 +1,11 @@
-import './style.css'
 import {Button, makeStyles, TextField} from '@material-ui/core';
 import {Link, useHistory, useRouteMatch} from 'react-router-dom';
-import {useEffect, useState} from 'react'
-import {Add, Get} from '../../@core/api-base';
+import {useState} from 'react'
+import {Add} from '../../@core/api-base';
 import {ApplicationUserModel} from '../../@core/models/applicationUser';
 import {useAppDispatch} from '../../@core/app-store/hooks'
 import {setAuth} from '../authSlice';
+import './style.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,18 +17,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Login() {
-
-
-  useEffect(() => {
-    Get(["https://english-buddy-speech.herokuapp.com/"]).then((res) => {
-      // console.log(res);
-    })
-  }, [])
-
+  // useEffect(() => {
+  //   Get(["https://english-buddy-speech.herokuapp.com/"]).then((res) => {
+  //     // console.log(res);
+  //   })
+  // }, [])
 
   const dispatch = useAppDispatch();
+
   const classes = useStyles();
+
   useRouteMatch();
+
   const history = useHistory();
 
   const [email, setEmail] = useState('');

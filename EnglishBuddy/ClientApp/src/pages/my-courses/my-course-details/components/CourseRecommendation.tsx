@@ -188,7 +188,7 @@ export function CourseRecommendation(props: { courseId: any }) {
               <p className='mt-5 font-semibold text-4xl text-blue-900'>
                 You have completed this course. Keep it up!
               </p>
-              <Link to="/dashboard">
+              <Link to={"/dashboard"}>
                 <Button variant="contained"
                         className="mt-5"
                         color="primary"

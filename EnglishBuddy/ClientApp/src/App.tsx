@@ -64,9 +64,9 @@ const App = () => {
       <Loading loading={loading}/>
       <Router>
         <Switch>
-          <Route path="/" component={Frontpage}/>
           <Route path="/sign-in" component={Login}/>
           <Route path="/sign-up" component={SignUp}/>
+          <Route path="/" component={Frontpage}/>
           <Layout>
             <ProtectedRoute path="/dashboard" component={Dashboard}/>
             <ProtectedRoute path="/my-courses" component={MyCourses}/>

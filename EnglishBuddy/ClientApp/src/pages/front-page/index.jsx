@@ -30,12 +30,16 @@ export default function Frontpage() {
             </div>
             <br/>
             <div className='flex'>
-              <Link to='/sign-in'>
-                <Button variant='contained' size='large' color='primary'>SIGN IN</Button>
+              <Link to={'/sign-in'}>
+                <Button variant='contained' size='large' color='primary'>
+                  SIGN IN
+                </Button>
               </Link>
               <div className='ml-7'>
-                <Link to='/sign-up'>
-                  <Button variant='contained' size='large' color='primary'>REGISTER</Button>
+                <Link to={'/sign-up'}>
+                  <Button variant='contained' size='large' color='primary'>
+                    REGISTER
+                  </Button>
                 </Link>
               </div>
             </div>

@@ -42,7 +42,7 @@ export default function SignUp() {
           </strong>
           <p className='mt-4 mb-5 h5'>
             Already a member?&nbsp;
-            <Link to={'/'}
+            <Link to={'/sign-in'}
                   className='text-primary link-behaviour'>
               Sign In
             </Link>
