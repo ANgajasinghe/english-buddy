@@ -1,6 +1,6 @@
-import {Button, makeStyles, TextField} from '@material-ui/core'
-import {Link, useHistory, useRouteMatch} from 'react-router-dom'
 import {useState} from 'react'
+import {Link, useHistory, useRouteMatch} from 'react-router-dom'
+import {makeStyles} from '@material-ui/core'
 import {Add} from '../../@core/api-base'
 import {ApplicationUserModel} from '../../@core/models/applicationUser'
 import {useAppDispatch} from '../../@core/app-store/hooks'
@@ -30,62 +30,59 @@ export default function Login() {
 
   const loginHandler = async () => {
     try {
-      const res = await Add(['ApplicationUsers', 'Login'], {email, password}) as ApplicationUserModel
+      const res = await Add(['ApplicationUsers', 'Login'], {
+        email,
+        password
+      }) as ApplicationUserModel
       dispatch(setAuth(res))
       history.push('/dashboard')
-    } catch (e) {
-      alert('Login failed')
+    } catch (err) {
+      console.log(err)
+      alert('Login failed.')
     }
   }
 
   return (
     <div className='d-flex justify-content-center align-items-center vw-100 vh-100'>
-      <div>
-        <div className='text-center'>
-          <strong className='display-5 b-400'>
-            LOGIN
-          </strong>
-          <p className='mt-5 mb-5 h5'>
-            Don't have an account yet?&nbsp;
-            <Link to={'/sign-up'}
-                  className='text-primary link-behaviour'>
-              Register
-            </Link>
-          </p>
-          <div className='mt-5'>
-            <form className={classes.root}
-                  autoComplete='off'>
-              <TextField onChange={e => setEmail(e.target.value)}
-                         variant='filled'
-                         label='Email address'
-                         size='small'
-                         id='my-input'
-                         style={{
-                           width: '350px'
-                         }}/>
-              <br/>
-              <TextField onChange={e => setPassword(e.target.value)}
-                         variant='filled'
-                         label='Password'
-                         type='password'
-                         size='small'
-                         id='my-input'
-                         style={{
-                           width: '350px'
-                         }}/>
-              <br/>
-              <br/>
-              <Button variant='contained'
-                      onClick={loginHandler}
-                      className='p-3'
-                      color='primary'
-                      style={{
-                        width: '350px'
-                      }}>
-                Login
-              </Button>
-            </form>
-          </div>
+      <div className='text-center card bg-secondary p-5 rounded-lg'>
+        <div className='font-bold text-4xl'>
+          LOGIN
+        </div>
+        <p className='mt-5 mb-5 h5'>
+          Don't have an account yet?&nbsp;
+          <Link to={'/sign-up'}
+                className='text-primary link-behaviour'>
+            Register
+          </Link>
+        </p>
+        <div className='mt-4'>
+          <form className={classes.root}
+                autoComplete='off'>
+            <input onChange={e => setEmail(e.target.value)}
+                   placeholder='Email Address'
+                   className='p-3 outline-none rounded-lg'
+                   style={{
+                     width: '350px'
+                   }}/>
+            <br/><br/>
+            <input onChange={e => setPassword(e.target.value)}
+                   placeholder='Password'
+                   type='password'
+                   className='p-3 outline-none rounded-lg'
+                   style={{
+                     width: '350px'
+                   }}/>
+            <br/><br/><br/>
+            <button className='text-white justify-center text-uppercase bg-blue-800 hover:bg-blue-900 py-2 rounded-lg'
+                    onClick={loginHandler}
+                    value='Login'
+                    type='submit'
+                    style={{
+                      width: '350px'
+                    }}>
+              Login
+            </button>
+          </form>
         </div>
       </div>
     </div>
