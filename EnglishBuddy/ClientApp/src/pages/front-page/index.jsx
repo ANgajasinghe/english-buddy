@@ -32,7 +32,7 @@ export default function Frontpage() {
             <div className='flex'>
               <Link to={'/sign-in'}>
                 <Button variant='contained' size='large' color='primary'>
-                  SIGN IN
+                  LOGIN
                 </Button>
               </Link>
               <div className='ml-7'>

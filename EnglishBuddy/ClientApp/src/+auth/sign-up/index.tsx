@@ -1,21 +1,21 @@
 import './style.css'
-import {Button, makeStyles, TextField} from '@material-ui/core';
-import {Link} from 'react-router-dom';
-import {useState} from 'react';
-import {ApplicationUserModel} from '../../@core/models/applicationUser';
-import {Add} from '../../@core/api-base';
+import {Button, makeStyles, TextField} from '@material-ui/core'
+import {Link} from 'react-router-dom'
+import {useState} from 'react'
+import {ApplicationUserModel} from '../../@core/models/applicationUser'
+import {Add} from '../../@core/api-base'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     '& .MuiTextField-root': {
       margin: theme.spacing(1),
-      width: 200,
-    },
-  },
-}));
+      width: 200
+    }
+  }
+}))
 
 export default function SignUp() {
-  const classes = useStyles();
+  const classes = useStyles()
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -30,21 +30,21 @@ export default function SignUp() {
       gender: 'Male'
     } as ApplicationUserModel).then(res => {
       console.log(res)
-    }).catch(err => console.log(err));
+    }).catch(err => console.log(err))
   }
 
   return (
     <div className='d-flex justify-content-center align-items-center vw-100 vh-100'>
       <div>
         <div className='text-center'>
-          <strong className='display-5 b-400'>
-            <b>Sign Up</b>
+          <strong className='display-5 b-400 font-extrabold'>
+            REGISTER
           </strong>
-          <p className='mt-4 mb-5 h5'>
-            Already a member?&nbsp;
+          <p className='mt-5 mb-5 h5'>
+            Already have an account?&nbsp;
             <Link to={'/sign-in'}
                   className='text-primary link-behaviour'>
-              Sign In
+              Login
             </Link>
           </p>
           <div className='mt-5'>
@@ -85,7 +85,7 @@ export default function SignUp() {
                         width: '350px'
                       }}
                       color='primary'>
-                Sign Up
+                Register
               </Button>
             </form>
           </div>

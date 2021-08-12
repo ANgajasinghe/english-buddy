@@ -1,46 +1,40 @@
-import {Button, makeStyles, TextField} from '@material-ui/core';
-import {Link, useHistory, useRouteMatch} from 'react-router-dom';
+import {Button, makeStyles, TextField} from '@material-ui/core'
+import {Link, useHistory, useRouteMatch} from 'react-router-dom'
 import {useState} from 'react'
-import {Add} from '../../@core/api-base';
-import {ApplicationUserModel} from '../../@core/models/applicationUser';
+import {Add} from '../../@core/api-base'
+import {ApplicationUserModel} from '../../@core/models/applicationUser'
 import {useAppDispatch} from '../../@core/app-store/hooks'
-import {setAuth} from '../authSlice';
+import {setAuth} from '../authSlice'
 import './style.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     '& .MuiTextField-root': {
       margin: theme.spacing(1),
-      width: 200,
-    },
-  },
-}));
+      width: 200
+    }
+  }
+}))
 
 export default function Login() {
-  // useEffect(() => {
-  //   Get(["https://english-buddy-speech.herokuapp.com/"]).then((res) => {
-  //     // console.log(res);
-  //   })
-  // }, [])
+  const dispatch = useAppDispatch()
 
-  const dispatch = useAppDispatch();
+  const classes = useStyles()
 
-  const classes = useStyles();
+  useRouteMatch()
 
-  useRouteMatch();
+  const history = useHistory()
 
-  const history = useHistory();
-
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   const loginHandler = async () => {
     try {
-      const res = await Add(['ApplicationUsers', 'Login'], {email, password}) as ApplicationUserModel;
-      dispatch(setAuth(res));
-      history.push('/dashboard');
+      const res = await Add(['ApplicationUsers', 'Login'], {email, password}) as ApplicationUserModel
+      dispatch(setAuth(res))
+      history.push('/dashboard')
     } catch (e) {
-      alert('Login failed');
+      alert('Login failed')
     }
   }
 
@@ -49,13 +43,13 @@ export default function Login() {
       <div>
         <div className='text-center'>
           <strong className='display-5 b-400'>
-            <b>Sign In</b>
+            LOGIN
           </strong>
-          <p className='mt-4 mb-5 h5'>
-            New to this site?&nbsp;
+          <p className='mt-5 mb-5 h5'>
+            Don't have an account yet?&nbsp;
             <Link to={'/sign-up'}
                   className='text-primary link-behaviour'>
-              Sign Up
+              Register
             </Link>
           </p>
           <div className='mt-5'>
@@ -88,7 +82,7 @@ export default function Login() {
                       style={{
                         width: '350px'
                       }}>
-                Sign In
+                Login
               </Button>
             </form>
           </div>
