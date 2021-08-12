@@ -16,9 +16,9 @@ import Login from "./+auth/login";
 import SignUp from "./+auth/sign-up";
 import Dashboard from "./pages/dashboard";
 import MyCourseDetails from "./pages/my-courses/my-course-details";
-import Frontpage from "./pages/front-page";
-import "./App.css";
 import MyCourses from './pages/my-courses/index';
+import Frontpage from "./pages/front-page/index";
+import "./App.css";
 
 const App = () => {
   const dispatch = useAppDispatch();
@@ -64,13 +64,13 @@ const App = () => {
       <Loading loading={loading}/>
       <Router>
         <Switch>
-          <Route exact path="/" component={Login}/>
+          <Route path="/" component={Frontpage}/>
+          <Route path="/sign-in" component={Login}/>
           <Route path="/sign-up" component={SignUp}/>
           <Layout>
             <ProtectedRoute path="/dashboard" component={Dashboard}/>
             <ProtectedRoute path="/my-courses" component={MyCourses}/>
-            <Route path="/my-course-details/:courseId" component={MyCourseDetails}/>
-            <Route path="/front-page" component={Frontpage}/>
+            <ProtectedRoute path="/my-course-details/:courseId" component={MyCourseDetails}/>
           </Layout>
         </Switch>
       </Router>
