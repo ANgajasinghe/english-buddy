@@ -8,7 +8,6 @@ import {ApplicationUserModel} from "./@core/models/applicationUser";
 import {SaModel} from "./@core/models/saModel";
 import {theme} from "./@ui/theme";
 import Layout from "./@ui/layout";
-import ProtectedRoute from "./@ui/components/ProtectedRoute";
 import Loading from "./@ui/components/loading";
 import {setAuth} from "./+auth/authSlice";
 import {setReview} from "./pages/comment/commentSlice";
@@ -19,6 +18,7 @@ import MyCourseDetails from "./pages/my-courses/my-course-details";
 import MyCourses from './pages/my-courses/index';
 import Frontpage from "./pages/front-page/index";
 import "./App.css";
+import ProtectedRoute from "./@ui/components/ProtectedRoute";
 
 const App = () => {
   const dispatch = useAppDispatch();
@@ -64,12 +64,12 @@ const App = () => {
       <Loading loading={loading}/>
       <Router>
         <Switch>
-          <Route path="/sign-in" component={Login}/>
-          <Route path="/sign-up" component={SignUp}/>
-          <Route path="/" component={Frontpage}/>
+          <Route exact path="/sign-in" component={Login}/>
+          <Route exact path="/sign-up" component={SignUp}/>
+          <Route exact path="/" component={Frontpage}/>
           <Layout>
-            <ProtectedRoute path="/dashboard" component={Dashboard}/>
-            <ProtectedRoute path="/my-courses" component={MyCourses}/>
+            <ProtectedRoute exact path="/dashboard" component={Dashboard}/>
+            <ProtectedRoute exact path="/my-courses" component={MyCourses}/>
             <ProtectedRoute path="/my-course-details/:courseId" component={MyCourseDetails}/>
           </Layout>
         </Switch>

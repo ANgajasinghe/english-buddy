@@ -73,7 +73,7 @@ export default function SignUp() {
             <button className='text-white justify-center text-uppercase bg-blue-800 hover:bg-blue-900 py-2 rounded-lg'
                     onClick={onSignIn}
                     value='Login'
-                    type='submit'
+                    type='button'
                     style={{
                       width: '350px'
                     }}>
