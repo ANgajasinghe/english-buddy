@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+
 namespace EnglishBuddy.Domain.Entities
 {
     public class CourseType

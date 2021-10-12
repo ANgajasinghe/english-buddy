@@ -17,7 +17,7 @@ export default function SummarizationQuestion(props: {
       <label className='mt-3'>
         {props.description}
       </label>
-      <textarea className='w-100 px-4 py-3 mt-4 focus:outline-none bg-gray-100'
+      <textarea className='w-100 px-4 py-3 mt-4 focus:outline-none bg-gray-50 border-solid border-2 border-gray-200 rounded'
                 value={props.answer}
                 onChange={props.handleChange}
                 rows={8}

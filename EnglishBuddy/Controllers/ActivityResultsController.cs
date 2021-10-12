@@ -74,20 +74,20 @@ namespace EnglishBuddy.Controllers
             _context.ActivityResults.Add(activityResult);
             await _context.SaveChangesAsync();
 
-            var courseId = await _context.Activities
-                .Where(x => x.Id == activityResult.ActivityId)
-                .Select(x => x.CourseId)
-                .FirstOrDefaultAsync();
+            // var courseId = await _context.Activities
+            //     .Where(x => x.Id == activityResult.ActivityId)
+            //     .Select(x => x.CourseId)
+            //     .FirstOrDefaultAsync();
 
-            var applicationUserCourse = await _context.ApplicationUserCourses
-                .Where(x => x.ApplicationUserId == _currentUserService.UserId && x.CourseId == courseId)
-                .FirstOrDefaultAsync();
-            
-            applicationUserCourse.Sate = state;
-            applicationUserCourse.Result = activityResult.OverallScore;
+            // var applicationUserCourse = await _context.ApplicationUserCourses
+            //     .Where(x => x.ApplicationUserId == _currentUserService.UserId && x.CourseId == courseId)
+            //     .FirstOrDefaultAsync();
+            //
+            // applicationUserCourse.Sate = state;
+            // applicationUserCourse.Result = activityResult.OverallScore;
 
-            _context.ApplicationUserCourses.Update(applicationUserCourse);
-            await _context.SaveChangesAsync();
+            //_context.ApplicationUserCourses.Update(applicationUserCourse);
+            //await _context.SaveChangesAsync();
 
             return Ok();
         }

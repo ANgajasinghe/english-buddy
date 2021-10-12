@@ -13,12 +13,13 @@ namespace EnglishBuddy.Domain.Entities
         [Required] public string Difficulty { get; set; }
         [Required] public bool IsBestSeller { get; set; }
         [Required] public int? CourseCategoryId { get; set; }
+        
         public CourseCategory CourseCategory { get; set; }
         public CourseType CourseType { get; set; }
         public string ImageUrl { get; set; }
         public float Rating { get; set; }
+
+        public ICollection<Lesson> Lessons{ get; set; }        
         
-        public ICollection<SamplesQuestion> SamplesQuestions { get; set; }
-        public ICollection<Activity> Activities { get; set; }
     }
 }

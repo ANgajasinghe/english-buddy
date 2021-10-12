@@ -6,6 +6,7 @@ const ProtectedRoute = ({component, ...rest}: any) => {
   const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);
 
   const routerComponent = (props: any) => {
+    return React.createElement(component, props);
     if (isAuthenticated) {
       return React.createElement(component, props);
     } else {

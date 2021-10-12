@@ -3,7 +3,6 @@ import {useEffect, useState} from 'react';
 import {Get} from '../../@core/api-base';
 import {CourseModel} from '../../@core/models/course';
 import CourseCard from '../../@ui/components/CourseCard';
-import Comment from '../comment';
 import './style.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -49,7 +48,6 @@ export default function Home() {
       <hr/>
       <div>
         <h3>Real Time Sentiment Analysis Test</h3>
-        <Comment/>
       </div>
     </div>
   );

@@ -98,14 +98,6 @@ export default function EssayCorrections(props: {
           })
         }
       </div>
-      <div className='mt-5'>
-        <label className='font-semibold text-lg'>
-          Feedback
-        </label>
-        <div className='mt-3 text-justify'>
-          <label>{props.suggestions}</label>
-        </div>
-      </div>
     </div>
   )
 }

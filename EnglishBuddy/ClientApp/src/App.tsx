@@ -16,15 +16,19 @@ import Login from './+auth/login'
 import SignUp from './+auth/sign-up'
 import Dashboard from './pages/dashboard'
 import MyCourseDetails from './pages/my-courses/my-course-details'
+import lesson from './pages/my-courses/my-course-details/lesson'
 import MyCourses from './pages/my-courses/index'
 import Frontpage from './pages/front-page/index'
 import './App.css'
 
 const App = () => {
+
+
   const dispatch = useAppDispatch()
 
   const [connection, setConnection] = useState({} as signalR.HubConnection)
   const [loading, setLoading] = useState(false)
+
 
   useEffect(() => {
     dispatch(setAuth({} as ApplicationUserModel))
@@ -32,9 +36,12 @@ const App = () => {
     LoadingSubject.subscribe((res) => {
       setLoading(res)
     })
+
+
     return () => {
       LoadingSubject.unsubscribe()
     }
+
   }, [dispatch])
 
   useEffect(() => {
@@ -70,7 +77,9 @@ const App = () => {
           <Layout>
             <ProtectedRoute exact path='/dashboard' component={Dashboard}/>
             <ProtectedRoute exact path='/my-courses' component={MyCourses}/>
+            <ProtectedRoute path='/lesson/:lessonId' component={lesson}/>
             <ProtectedRoute path='/my-course-details/:courseId' component={MyCourseDetails}/>
+
           </Layout>
         </Switch>
       </Router>

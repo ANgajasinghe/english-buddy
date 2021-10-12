@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using EnglishBuddy.Application.Persistence;
-using EnglishBuddy.Domain.Entities;
 using EnglishBuddy.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -48,7 +46,9 @@ namespace EnglishBuddy.Controllers
         public async Task<IActionResult> GetMyCourseIntroduction(int id, CancellationToken cancellationToken)
         {
             var res = await _appDbContext.ApplicationUserCourses
+                .Include(x=>x.ApplicationUserCourseLessons)
                 .Include(x => x.Course)
+                .ThenInclude(x=>x.Lessons)
                 .Where(x => x.ApplicationUserId == _currentUserService.UserId && x.CourseId == id)
                 .Select(x => new
                 {
@@ -61,6 +61,8 @@ namespace EnglishBuddy.Controllers
                     x.Course.Difficulty,
                     x.Course.Introduction,
                     x.IsCompletedIntroduction,
+                    x.Course.Lessons,
+                    x.ApplicationUserCourseLessons
                 })
                 .FirstOrDefaultAsync(cancellationToken);
 

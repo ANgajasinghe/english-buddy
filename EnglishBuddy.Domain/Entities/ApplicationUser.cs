@@ -11,21 +11,21 @@ namespace EnglishBuddy.Domain.Entities
         [Required] public string Password { get; set; }
         [Required] public string FirstName { get; set; }
         [Required] public string LastName { get; set; }
-        [Required] public string Gender { get; set; }
+         public string Gender { get; set; }
         [Required] public string RoleName { get; set; }
         [Required] public string ProfilePictureUrl { get; set; }
-        [Required] public string Resident { get; set; }
-        [Required] public string City { get; set; }
-        [Required] public int Age { get; set; }
-        [Required] public string Language { get; set; }
-        [Required] public int Grammar { get; set; }
-        [Required] public int Speaking { get; set; }
-        [Required] public int Spelling { get; set; }
-        [Required] public int Writing { get; set; }
-        [Required] public int Rank { get; set; }
-        [Required] public int Points { get; set; }
-        [Required] public int CourseCount { get; set; }
-        [Required] public int Coins { get; set; }
+         public string Resident { get; set; }
+         public string City { get; set; }
+         public int Age { get; set; }
+         public string Language { get; set; }
+         public int Grammar { get; set; }
+         public int Speaking { get; set; }
+         public int Spelling { get; set; }
+         public int Writing { get; set; }
+         public int Rank { get; set; }
+         public int Points { get; set; }
+         public int CourseCount { get; set; }
+         public int Coins { get; set; }
 
             
         private ICollection<ApplicationUserCourse> ApplicationUserCourses { get; set; }

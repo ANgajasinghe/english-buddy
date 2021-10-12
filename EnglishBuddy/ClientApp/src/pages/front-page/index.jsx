@@ -5,6 +5,53 @@ import {FrontCards} from './components/FrontCards'
 import home1 from './homeimage1.png'
 
 export default function Frontpage() {
+
+
+//   const oidcConfig = {
+//     client_id: 'FbREIUcqQU',
+//     redirect_uri: window.location.origin,
+//     response_type: 'code',
+//     post_logout_redirect_uri: window.location.origin,
+//     scope: 'openid profile email eb_api offline_access',
+//     authority: 'https://identity365.herokuapp.com',
+//     automaticSilentRenew: true,
+//     loadUserInfo: true,
+//     checkSessionInterval: 60,
+//     monitorSession: false,
+//     userStore: new WebStorageStateStore({ store: new InMemoryWebStorage() }),
+// }
+
+
+//   //const [userManager, setUserManager] = useState({})
+
+//   const userManager = new UserManager(oidcConfig);
+
+//   const param = useLocation().search;
+
+//   if(useLocation().search != null) {
+//     userManager.signinCallback(param).then(res=> {
+//       console.log(res);
+//       sessionStorage.setItem('access_token', res.access_token)
+//       sessionStorage.setItem('profile', res.profile.profile)
+//       window.location.href = './dashboard';
+//   })
+//   }
+
+//   useEffect(() => {
+
+
+//   }, [])
+
+
+//   const onLoginClick = () => {
+//     console.log('Login Clicked')
+//     userManager.signinRedirect().then(r=>
+//       console.log(r)
+//   )
+
+//   }
+
+
   return (
     <React.Fragment>
       <div className='shadow-sm py-5'>

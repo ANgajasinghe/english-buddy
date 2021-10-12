@@ -7,8 +7,7 @@ import {Provider} from 'react-redux';
 import store from './@core/app-store/store';
 import axios from 'axios';
 import {Utility} from './@core/utility';
-// @ts-ignore
-import AnimatedCursor from "react-animated-cursor"
+
 
 axios.defaults.baseURL = Utility.BASE_URL;
 
@@ -26,7 +25,6 @@ axios.interceptors.request.use(
 
 ReactDOM.render(
   <Provider store={store}>
-    <AnimatedCursor/>
     <App/>
   </Provider>,
   document.getElementById('root')

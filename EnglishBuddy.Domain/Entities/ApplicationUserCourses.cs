@@ -1,4 +1,6 @@
-﻿namespace EnglishBuddy.Domain.Entities
+﻿using System.Collections.Generic;
+
+namespace EnglishBuddy.Domain.Entities
 {
     public class ApplicationUserCourse
     {
@@ -7,6 +9,9 @@
         public string ApplicationUserId { get; set; }
         public Course Course { get; set; }
         public int CourseId { get; set; }
+
+        public ICollection<ApplicationUserCourseLesson> ApplicationUserCourseLessons { get; set; }
+        
 
         public bool IsCompletedIntroduction { get; set; }
         public int Sate { get; set; }

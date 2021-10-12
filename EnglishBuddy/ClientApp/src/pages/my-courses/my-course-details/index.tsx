@@ -4,9 +4,14 @@ import {Get, Update} from "../../../@core/api-base";
 import {CourseModel} from "../../../@core/models/course";
 import IntroductionLesson from "./components/IntroductionLesson";
 import {CourseRecommendation} from "./components/CourseRecommendation";
+import ReactHtmlParser from "react-html-parser";
+import LessonCard from "../../../@ui/components/LessonCard";
 
 export default function MyCourseDetails() {
   const {courseId}: any = useParams();
+  const {lessonId}: any = useParams();
+  
+  console.log(useParams());
 
   const [course, setCourse] = useState<CourseModel>({} as CourseModel);
 
@@ -42,6 +47,7 @@ export default function MyCourseDetails() {
       await getCourseDetailAsync(courseId);
     };
     asyncHub().then(() => {
+      
     });
   }, [courseId]);
 
@@ -52,15 +58,34 @@ export default function MyCourseDetails() {
           {course.title}
         </label>
       </div>
-      <div className="text-xl font-poppins rounded-xl">
-        <IntroductionLesson introduction={course.introduction}
-                            isCompletedIntroduction={course.isCompletedIntroduction}
-                            onCourseComplete={onCourseComplete}/>
-        {
-          course.isCompletedIntroduction ? (
-            <CourseRecommendation courseId={courseId}/>
-          ) : null
-        }
+      
+      <div className='mt-3 bg-gray-100 p-5 rounded-5'>
+        {ReactHtmlParser(course.description)}
+      </div>
+      
+      
+      <div className="rounded-xl row mt-4">
+
+        {course.lessons?.map(x=> {
+
+          
+          const isLessonCompleted = course.applicationUserCourseLessons?.some(c=>c.lessonId === x.id) ?? false;
+          
+          
+          return <LessonCard key={x.id} lesson={x} isCompleted={isLessonCompleted} />
+        })}
+        
+        
+        {/*<IntroductionLesson introduction={course.introduction}*/}
+        {/*                    isCompletedIntroduction={course.isCompletedIntroduction}*/}
+        {/*                    onCourseComplete={onCourseComplete}/>*/}
+        {/*{*/}
+        {/*  course.isCompletedIntroduction ? (*/}
+        {/*    <CourseRecommendation courseId={courseId}/>*/}
+        {/*  ) : null*/}
+        {/*}*/}
+        
+        
       </div>
     </div>
   );

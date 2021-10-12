@@ -19,18 +19,26 @@ export default function SignUp() {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
 
-  const onSignIn = () => {
-    Add(['ApplicationUsers'], {
-      email,
-      password,
-      firstName: '',
-      lastName: '',
-      roleName: 'Student',
-      gender: 'Male'
-    } as ApplicationUserModel).then(res => {
-      console.log(res)
-    }).catch(err => console.log(err))
+  const onSignIn = async () => {
+
+    try {
+      await Add(['ApplicationUsers'], {
+        email,
+        password,
+        firstName,
+        lastName,
+        profilePictureUrl: 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200',
+        roleName: 'Student',
+        gender: 'Male'
+      } as ApplicationUserModel)
+      
+    } catch (err) {
+      console.log(err);
+      alert('error occurred');
+    }
   }
 
   return (
@@ -50,6 +58,22 @@ export default function SignUp() {
           <form className={classes.root} autoComplete='off'>
             <input onChange={e => setEmail(e.target.value)}
                    placeholder='Email Address'
+                   className='p-3 outline-none rounded-lg'
+                   style={{
+                     width: '350px'
+                   }}/>
+            <br/><br/>
+            <input onChange={e => setFirstName(e.target.value)}
+                   placeholder='First Name'
+                   type='text'
+                   className='p-3 outline-none rounded-lg'
+                   style={{
+                     width: '350px'
+                   }}/>
+            <br/><br/>
+            <input onChange={e => setLastName(e.target.value)}
+                   placeholder='Last Name'
+                   type='text'
                    className='p-3 outline-none rounded-lg'
                    style={{
                      width: '350px'

@@ -41,17 +41,17 @@ namespace EnglishBuddy.Controllers
             await _appDbContext.ActivityResults.AddAsync(res, cancellationToken);
             await _appDbContext.SaveChangesAsync(cancellationToken);
 
-           var courseRes = await _appDbContext.Courses
-               .Include(x=>x.Activities)
-               .Include(x=>x.SamplesQuestions)
-               .Include(x=>x.CourseCategory)
-               .ThenInclude(x=>x.Lessons)
-               .FirstOrDefaultAsync(x => x.Id == activityFrom.CourseId, cancellationToken);
+           // var courseRes = await _appDbContext.Courses
+           //     .Include(x=>x.Activities)
+           //     .Include(x=>x.SamplesQuestions)
+           //     .Include(x=>x.CourseCategory)
+           //     .ThenInclude(x=>x.Lessons)
+           //     .FirstOrDefaultAsync(x => x.Id == activityFrom.CourseId, cancellationToken);
 
-          var recommendation = await _userRecommendations
-              .GetAsync(activityFrom.State, (int)res.OverallScore, courseRes);
+          // var recommendation = await _userRecommendations
+          //     .GetAsync(activityFrom.State, (int)res.OverallScore, courseRes);
 
-          return Ok(recommendation);
+          return Ok();
 
 
         }

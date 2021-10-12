@@ -15,7 +15,7 @@ namespace EnglishBuddy.Application
 
             services.AddDbContext<AppDbContext>(dbContextBuilder =>
             {
-                dbContextBuilder.UseSqlServer(connectionString, o =>
+                dbContextBuilder.UseNpgsql(connectionString, o =>
                 {
                     o.EnableRetryOnFailure(
                         10,
@@ -25,6 +25,17 @@ namespace EnglishBuddy.Application
                     o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery);
                     o.MigrationsAssembly("EnglishBuddy");
                 });
+                
+                // dbContextBuilder.UseSqlServer(connectionString, o =>
+                // {
+                //     o.EnableRetryOnFailure(
+                //         10,
+                //         TimeSpan.FromSeconds(10),
+                //         null
+                //     );
+                //     o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery);
+                //     o.MigrationsAssembly("EnglishBuddy");
+                // });
                 dbContextBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             });
 

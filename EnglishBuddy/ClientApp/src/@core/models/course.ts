@@ -16,4 +16,19 @@ export interface CourseModel {
   difficulty: string;
   description: string;
   isCompletedIntroduction: boolean;
+  lessons: LessonModel[];
+  applicationUserCourseLessons: ApplicationUserCourseLessons[];
+}
+
+export interface LessonModel {
+  id: number;
+  title: string;
+  html: string;
+  type: number;
+  courseId: number;
+}
+
+export interface ApplicationUserCourseLessons {
+  id:number;
+  lessonId:number;
 }

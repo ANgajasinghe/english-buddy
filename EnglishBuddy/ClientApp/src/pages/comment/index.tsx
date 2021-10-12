@@ -10,9 +10,15 @@ import SentimentSatisfiedAltIcon from '@material-ui/icons/SentimentSatisfiedAltO
 import SentimentVerySatisfiedIcon from '@material-ui/icons/SentimentVerySatisfied';
 import './style.css';
 
-export default function Comment() {
+export default function Comment(props:{activityId:any}) {
   const dispatch = useAppDispatch();
 
+  const abc = () => {
+    console.log('Called');
+  }
+
+  // console.log(props.activitySubmit)
+  
   const commentHandler = (val: string) => {
     dispatch(setComment(val));
   };
@@ -61,7 +67,7 @@ export default function Comment() {
                   getLabelText={(value: number) => customIcons[value]?.label}
                   IconContainerComponent={IconContainer}/>
         </Box>
-        <TextareaAutosize className='w-100 mt-2 focus:outline-none bg-gray-100'
+        <TextareaAutosize className='w-100 mt-2 px-4 py-3 focus:outline-none bg-gray-50 border-solid border-2 border-gray-200 rounded'
                           aria-label='minimum height'
                           rowsMin={5}
                           onChange={(e) => commentHandler(e.target.value)}

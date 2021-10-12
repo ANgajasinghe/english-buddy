@@ -7,7 +7,6 @@ import {useAppDispatch, useAppSelector} from '../../@core/app-store/hooks'
 import {EssayModel} from '../../@core/models/essay'
 import {ActivityModel} from '../../@core/models/activity'
 import {ActivityResultModel} from '../../@core/models/activityResult'
-// import ConfirmationDialog from '../../@ui/components/ConfirmationDialog'
 import {EssaySuggestions} from '../../util/suggestions'
 import {setEvaluated} from '../my-courses/my-course-details/evaluationSlice'
 import EssayQuestion from './components/EssayQuestion'
@@ -26,7 +25,6 @@ export default function Essay(props: {
 
   const appUser = useAppSelector((state) => state.auth.applicationUser)
 
-  // const [open, setOpen] = useState(false)
   const [wordCount, setWordCount] = useState(0)
   const [answer, setAnswer] = useState('')
   const [valid, setValid] = useState(false)
@@ -40,15 +38,6 @@ export default function Essay(props: {
     spelling: 0,
     matches: null
   })
-
-  // const handleClickOpen: (event: any) => void = (event: any) => {
-  //   event.preventDefault()
-  //   setOpen(true)
-  // }
-  //
-  // const handleClose = () => {
-  //   setOpen(false)
-  // }
 
   const handleSubmit: (event: any) => void = async (event: any) => {
     event.preventDefault()
@@ -82,10 +71,8 @@ export default function Essay(props: {
       } as ActivityResultModel
       dispatch(setEvaluated(activityResult))
       setLoaded(true)
-      // handleClose()
     } catch (error) {
       setSubmitted(false)
-      // handleClose()
       console.log(error)
     }
   }
@@ -103,11 +90,6 @@ export default function Essay(props: {
 
   return (
     <div>
-      {/*<ConfirmationDialog dialogTitle='CONFIRMATION'*/}
-      {/*                    dialogDescription='Are you sure you want to submit your answer?'*/}
-      {/*                    open={open}*/}
-      {/*                    handleClose={handleClose}*/}
-      {/*                    handleSubmit={handleSubmit}/>*/}
       {
         results.score >= 8 && (
           <Confetti width={width}

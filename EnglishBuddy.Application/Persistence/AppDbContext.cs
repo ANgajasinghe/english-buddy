@@ -13,21 +13,40 @@ namespace EnglishBuddy.Application.Persistence
         {
         }
 
-        public DbSet<Activity> Activities { get; set; }
-        public DbSet<ActivityResult> ActivityResults { get; set; }
-        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<CourseCategory> CourseCategories { get; set; }
         public DbSet<CourseType> CourseTypes { get; set; }
         public DbSet<CourseComment> CourseComments { get; set; }
         public DbSet<Lesson> Lessons { get; set; }
         public DbSet<LessonComment> LessonComments { get; set; }
-        public DbSet<SamplesQuestion> SamplesQuestions { get; set; }
+        
+        public DbSet<Activity> Activities { get; set; }
+        public DbSet<ActivityComment> ActivityComments { get; set; }
+        public DbSet<ActivityResult> ActivityResults { get; set; }
+        
+        public DbSet<Example> Examples { get; set; }
+        public DbSet<ExtraLesson> ExtraLessons { get; set; }
+        
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         
         public DbSet<UserLesson> UserLessons { get; set; }
         public DbSet<UserActivity> UserActivities { get; set; }
         public DbSet<UserSampleQuestion> UserSampleQuestions { get; set; }
         public DbSet<ApplicationUserCourse> ApplicationUserCourses { get; set; }
+        public DbSet<ApplicationUserCourseLesson> ApplicationUserCourseLessons { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+
+            modelBuilder.Entity<ApplicationUserCourseLesson>()
+                .HasOne(x => x.Lesson)
+                .WithMany()
+                .OnDelete(DeleteBehavior.NoAction);
+            
+            base.OnModelCreating(modelBuilder);
+        }
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {

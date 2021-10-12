@@ -77,9 +77,9 @@ export function MyCourseCard(props: {
                 <h6 className='text-lg font-bold'>
                   {props.title}
                 </h6>
-                <small className='text-sm'>
-                  <i>{props.description}</i>
-                </small>
+                {/*<small className='text-sm'>*/}
+                {/*  <i>{props.description}</i>*/}
+                {/*</small>*/}
                 <div className='text-sm'>
                   <p className='font-semibold'>
                     {props.author}

@@ -6,7 +6,6 @@ import {CourseModel} from "../../@core/models/course";
 import {Get} from "../../@core/api-base";
 import {Link} from "react-router-dom";
 import ProgressBar from "../../@ui/components/ProgressBar";
-import {Line} from "react-chartjs-2";
 
 export default function Dashboard() {
   const appUser = useAppSelector((state) => state.auth.applicationUser);
@@ -30,30 +29,30 @@ export default function Dashboard() {
   };
 
 
-  const data = {
-    labels: ['1', '2', '3', '4', '5', '6'],
-    datasets: [
-      {
-        label: '# of Activities',
-        data: [12, 19, 3, 5, 2, 3],
-        fill: false,
-        backgroundColor: 'rgb(253, 114, 109)',
-        borderColor: 'rgba(253, 114, 109, 0.2)',
-      },
-    ],
-  };
-
-  const options = {
-    scales: {
-      yAxes: [
-        {
-          ticks: {
-            beginAtZero: true,
-          },
-        },
-      ],
-    },
-  };
+  // const data = {
+  //   labels: ['1', '2', '3', '4', '5', '6'],
+  //   datasets: [
+  //     {
+  //       label: '# of Activities',
+  //       data: [12, 19, 3, 5, 2, 3],
+  //       fill: false,
+  //       backgroundColor: 'rgb(253, 114, 109)',
+  //       borderColor: 'rgba(253, 114, 109, 0.2)',
+  //     },
+  //   ],
+  // };
+  //
+  // const options = {
+  //   scales: {
+  //     yAxes: [
+  //       {
+  //         ticks: {
+  //           beginAtZero: true,
+  //         },
+  //       },
+  //     ],
+  //   },
+  // };
 
   return (
     <div className='mb-5'>
@@ -96,9 +95,9 @@ export default function Dashboard() {
                 Progress Report
               </div>
               <div className='mt-3'>
-                <Line type={'line'}
+                {/* <Line type={'line'}
                       data={data}
-                      options={options}/>
+                      options={options}/> */}
               </div>
             </div>
             <div className="bg-white p-4 rounded-2xl"
@@ -142,7 +141,7 @@ export default function Dashboard() {
             {/* <Slider {...settings}> */}
             <div className="grid lg:grid-cols-2 mt-4 gap-2">
               {
-                courses.slice(0, 4).map((course) => (
+                courses.slice(0, 6).map((course) => (
                   <Link to={`my-course-details/${course.id}`}>
                     <MyCourseCard key={course.id}
                                   title={course.title}

@@ -6,12 +6,14 @@ import * as signalR from '@microsoft/signalr';
 interface State {
   review: SaModel,
   comment: string,
+  duplicateComment:string,
   connection: signalR.HubConnection
 }
 
 const initialState: State = {
   review: {} as SaModel,
   comment: '',
+  duplicateComment:'',
   connection: {} as signalR.HubConnection
 }
 
@@ -26,6 +28,7 @@ export const commentSlice = createSlice({
     },
     setComment: (state, action: PayloadAction<string>) => {
       state.comment = action.payload;
+      state.duplicateComment = action.payload;
     },
     setConnection: (state, action: PayloadAction<signalR.HubConnection>) => {
       state.connection = action.payload;

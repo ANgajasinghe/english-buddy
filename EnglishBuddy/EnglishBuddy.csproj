@@ -36,11 +36,6 @@
     <None Remove="ML-Models\SM.zip" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ML-Models\SM.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\EnglishBuddy.Application\EnglishBuddy.Application.csproj" />
     <ProjectReference Include="..\EnglishBuddy.Domain\EnglishBuddy.Domain.csproj" />
     <ProjectReference Include="..\EnglishBuddy.ML\EnglishBuddy.ML.csproj" />
