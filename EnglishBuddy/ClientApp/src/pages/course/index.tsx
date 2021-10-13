@@ -117,7 +117,7 @@ export default function Course() {
             <hr/>
             <h6>Please fo through these examples</h6>
             <div>
-              <b>{recommendation.samplesQuestion?.questions}</b>
+              <b>{recommendation.example?.questions}</b>
 
               <hr/>
               <div>

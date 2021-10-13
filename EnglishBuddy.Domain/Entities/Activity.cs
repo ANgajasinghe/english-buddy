@@ -19,6 +19,9 @@ namespace EnglishBuddy.Domain.Entities
         public int Rating { get; set; }
         [NotMapped] public int State { get; set; }
 
+        public int LessonId { get; set; }
+        public Lesson Lesson{ get; set; }
+
         public ICollection <ActivityComment> ActivityComments { get; set; }
     }
 }

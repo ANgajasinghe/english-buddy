@@ -4,7 +4,7 @@ export interface UserRecommendationModel {
   introduction: string;
   activity1: ActivityModel;
   activity2: ActivityModel;
-  samplesQuestion: SampleQuestionModel;
+  example: SampleQuestionModel;
   extraLesson: ExtraLessonModel;
   activities: ActivityModel[];
   lessons?: LessonModel[];

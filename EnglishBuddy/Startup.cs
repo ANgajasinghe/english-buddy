@@ -1,6 +1,7 @@
 using EnglishBuddy.Application;
 using EnglishBuddy.Hubs;
 using EnglishBuddy.Services;
+using Hangfire;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
@@ -68,6 +69,15 @@ namespace EnglishBuddy
             app.UseAuthorization();
             
             app.UseCors("Open");
+            
+            var options = new DashboardOptions
+            {
+                DisplayStorageConnectionString = false,
+                DashboardTitle = "English Buddy",
+            };
+            
+            app.UseHangfireDashboard("/background-workers", options);
+           
             
             app.UseEndpoints(endpoints =>
             {

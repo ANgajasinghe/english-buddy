@@ -141,7 +141,7 @@ export function CourseRecommendation(props: { id: any, type: string }) {
                     <div className="mb-3">
 
                         <div>
-                            <SampleQandA data={recommendation.samplesQuestion}/>
+                            <SampleQandA data={recommendation.example}/>
                             <div>
                                 <Button disabled={activeStep === 0}
                                         onClick={handleBack}
